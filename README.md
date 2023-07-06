@@ -1,8 +1,11 @@
 # AI fundamentals
 Notes for AI exam certification
+### Introduction:
  AI-900 indicates fundamentals
 Ai focus is more for cognitive service, bots and Azure ML
 Non AI focus is Microsoft responsible AI principles (ASCO framework)
+
+***************************************************
 
 # Artificial intelligence
 Reasoning
@@ -19,7 +22,7 @@ Computer vision (Classify or detect objects)
 Natural language processing (Interpret language)
 Conversational AI (Chatbots)
 
-#############
+
 # 3 Technological advancements
 ## Big data
 Cheaper and faster storage
@@ -30,7 +33,8 @@ GPU and sale-out clusters
 ## Algorithms
 Advancements in AI and ML algorithms
 
-##############
+*******************************************************
+
 # Cognitive services
 -Building AI infused apps with no ML /AI knowledge
 -Highly refined models
@@ -56,6 +60,7 @@ Custom (custom service/ create own)
 ### GA (Generally available)
 ### Retired
 
+****************************************
 
 # Microsoft Responsible AI
 ## Microsoft responsible AI Principles
@@ -82,6 +87,8 @@ Accountability
 1. Create a person group (Or larger person group)
 2. Register each person
 3. Upload face pictures
-4. Train the model
+
+
+5. Train the model
 
   
