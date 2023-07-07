@@ -112,6 +112,12 @@ Accountability
 ************************************
 # Creating a bot
 
+## Conversational AI
+
+## Bot framework
+
+************************************
+# Working with ML solutions
 
 ## 
   
