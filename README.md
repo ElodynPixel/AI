@@ -100,5 +100,18 @@ Accountability
 **********************************
 # Natural language processing
 
+
+## Speech API's
+
+## Speech services and speech studio
+
+## Language services
+
+## NLP cognitive services
+
+************************************
+# Creating a bot
+
+
 ## 
   
