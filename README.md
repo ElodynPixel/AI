@@ -7,7 +7,7 @@ Non AI focus is Microsoft responsible AI principles (ASCO framework)
 
 ***************************************************
 
-# Artificial intelligence
+# Artificial intelligence in Azure
 Reasoning
 	Draw conclusions from imperfect data
 Understanding
@@ -35,7 +35,7 @@ Advancements in AI and ML algorithms
 
 *******************************************************
 
-# Cognitive services
+## Cognitive services
 -Building AI infused apps with no ML /AI knowledge
 -Highly refined models
 -Ample language support
@@ -71,6 +71,8 @@ Inclusiveness
 Transparency
 Accountability
 
+***************************************
+
 # Vision
 ## Computer vision (CATCH ALL)
 `Colors and descriptions
@@ -87,8 +89,16 @@ Accountability
 1. Create a person group (Or larger person group)
 2. Register each person
 3. Upload face pictures
+4. Train the model
 
+## Form recognizer and ink
 
-5. Train the model
+## CUstom vision
 
+## Vision cognitive service
+
+**********************************
+# Natural language processing
+
+## 
   
