@@ -120,4 +120,5 @@ Accountability
 # Workingg with ML solutions
 
 ## Introduction to Machine Learning
-  
+
+## Classification on Azure ML
