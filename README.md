@@ -122,3 +122,7 @@ Accountability
 ## Introduction to Machine Learning
 
 ## Classification on Azure ML
+
+## Create a custom Azure ML resource
+
+## Automated ML
