@@ -119,7 +119,5 @@ Accountability
 ************************************
 # Workingg with ML solutions
 
-# Working with ML solutions
-
-## 
+## Introduction to Machine Learning
   
