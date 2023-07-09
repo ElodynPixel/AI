@@ -1,4 +1,5 @@
-# AI fundamentals
+# AI fundamentals-Exam tips
+*************************************************
 Notes for Exam tips AI exam certification
 
 ### Introduction:
@@ -129,4 +130,4 @@ Accountability
 ## Automated ML
 
 *************************************
-# prepare
+# Prepare for the Microsoft Azure AI Fundamentals (AI-900) certification
