@@ -127,3 +127,6 @@ Accountability
 ## Create a custom Azure ML resource
 
 ## Automated ML
+
+*************************************
+# prepare
