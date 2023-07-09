@@ -1,5 +1,5 @@
 # AI fundamentals
-Notes for AI exam certification
+Notes for Exam tips AI exam certification
 ### Introduction:
  AI-900 indicates fundamentals
 Ai focus is more for cognitive service, bots and Azure ML
