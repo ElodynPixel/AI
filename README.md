@@ -141,15 +141,43 @@ Microsoft cognitive services for developers: 1 Vision with Sahil Malik
 
 ******************************************************
 # Natural language processing
+### Speech
+-Speech to text (STT)
+-Text to speech (TTS)
+-Speech translation
+-Speaker recognition
+-Speech services
+-Speech studio
 
+### Language
+-Text analytics
+-Translator and custom translator
+-LUIS
+-QnA maker
+
+### Speech technologies
+ The Microsoft speech API's are quite mature, as they rely on models already used by Microsoft for many years on tools such as Skype, Xbox, and Cortana. 
+ They are Low latency on the sub second level after the last byte is received. 
+ Also, they support over 45 languages the paint job API, they also natively integrate with a Bot Framework which is simplifies the creation of voice bots.
 
 ## Speech API's
 
-## Speech services and speech studio
+### STT
+**Three recognition modes**
+-Recognize once
+-Continuous
+-Dictation
 
-## Language services
+**Handles profanity**
+-Raw (allows profanity)
+-Masked (Covered with asterisks)
+-Removed (deletes profanity)
 
-## NLP cognitive services
+**Batch transcriptions**
+-Audio processing (Customer services)
+
+**Speech devices SDK**
+-Speech enabled devices
 
 ************************************
 # Creating a bot
