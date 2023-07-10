@@ -216,6 +216,27 @@ SSML (XML based) (Speech synthesis markup language)
 -Pronunciation models
 -Voice fonts
 
+## Language services
+-Text analytics
+	Key phrase extraction
+	Sentiment analysis
+	Language detection
+	Entity recognition
+-Translator
+	Translates 70+ languages
+	Transliterates between alphabets (Japanese and Latin)
+	Language and sentence length detection
+	V3 returns JSON
+	Custom translator
+-LUIS (Language Understanding Intelligence Service) (https://luis.ai)
+	Utterance
+	Intent
+	Entity
+	-Excellent with Bot framework
+	-JSON array with confidence level (intent and entity)
+	-Prebuilt domains
+	one click integration with bing-spell check, sentiment analysis, speech recognition
+-QnA maker
 
 
 ************************************
