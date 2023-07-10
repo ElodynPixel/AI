@@ -93,13 +93,53 @@ Accountability
 3. Upload face pictures
 4. Train the model
 
-## Form recognizer and ink
+## Form and ink recognizers
 
-## CUstom vision
+### Form recognizer services
+Custom models (key/value pair and table extractions)
+US receipt format
+Layout API (text and table structures)
 
-## Vision cognitive service
+### Ink recognizer
 
-**********************************
+Process
+Ink stroke input--API---Recognition tree
+
+## Custom Vision
+
+### Two main capabilities of custom vision
+#### Classification
+#### Object detection
+
+### Custom vision details
+Interactive portal (www.customvision.ai)
+Two separate end point and keys (for training and prediction)
+Several specialized domains
+Supports edge computing (compact models)
+
+### Custom vision best practices
+-Ideally at least 50 images/tag
+-Balanced input of images (bananas and oranges)
+-Add negative images (neither banana nor orange)
+-Fix wrong past predictions to improve the model
+
+Resources and additional resources
+https://aidemos.microsoft.com
+https://azure.microsoft.com/en-us/services/cognitive-services/face
+customvision.ai/projects
+
+additional resources
+https://aka.ms/explore-computer-vision
+https://aischool.microsoft.com/en-us/home
+https://aidemos.microsoft.com
+https://docs.microsoft.com/en-us/azure/cognitive-services
+https://github.com/microsoft
+
+LinkedIn learning
+Microsoft cognitive services for developers: 1 Vision with Sahil Malik
+
+
+******************************************************
 # Natural language processing
 
 
