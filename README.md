@@ -179,6 +179,45 @@ Microsoft cognitive services for developers: 1 Vision with Sahil Malik
 **Speech devices SDK**
 -Speech enabled devices
 
+### TTS
+**Three voice types**
+-Standard (more language options, robotic)
+-Neural (less languages, more humanlike)
+-Custom 
+
+SSML (XML based) (Speech synthesis markup language)
+-Controls speed, pitch, volume, pronunciation
+
+**Speech translation**
+-60 Languages
+-Translation returned as text/ optionally synthesized voice (not available for all languages)
+-Handles profanity (Raw, Masked (default), Removed)
+
+**Speaker recognition**
+-Speaker verification (authentication purposes)
+	-Set up
+		(voice) Enrollment phase (Passphase)
+		Voice signature is generated
+		Use it to grant access
+-Speaker identification (recognize speaker from audio file)
+	-Simpler enrollment process
+
+
+
+## Speech services and speech studio
+### Speech studio (custom speech portal on Azure) (at least 8h audio + corresponding transcripts)
+**Acoustic models**
+-Environment
+-Speaker
+-Audio equipment
+
+**Language models**
+-Language model (pharma, medical, sci fi)
+-Pronunciation models
+-Voice fonts
+
+
+
 ************************************
 # Creating a bot
 
