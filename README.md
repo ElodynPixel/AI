@@ -274,9 +274,33 @@ Conversational AI, as we have seen before is, the ability of a software agent 
 
 ************************************
 # Working with ML solutions
+### Five questions data sciences can answer
+-Classification (A/B?)
+-Regression (how much/many?)
+-Anomaly detection (Is this weird?)
+-Clustering (Which groups)
+-Reinforcement (What's next?)
 
-## Introduction to Machine Learning
+### Process for creating ML models
+-Obtain the data
+-Join data
+-Treat/clean data
+-split data(70/30 or 60/40)
+-Use larger portion of split data to train the model
+-Use one of several algorithm (neural network,boosted decision tree/ logistic regression). Will depend on whether it is a clustering, regression or classification model
+-Scored model
+-Model evaluation
 
+### The confusion matrix
+-True negative
+-True positive
+-False negative
+-False positive
+
+Infer metrics
+-Precision=TP/(TP+FP)
+-Recall
+-Accuracy		
 ## Classification on Azure ML
 
 ## Create a custom Azure ML resource
