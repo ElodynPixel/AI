@@ -301,11 +301,23 @@ Infer metrics
 -Precision=TP/(TP+FP)
 -Recall
 -Accuracy		
-## Classification on Azure ML
 
-## Create a custom Azure ML resource
+### Supervised vs unsupervised learning
+-Supervised- labeled data set (classification and regression)
+-Unsupervised- unlabeled data set (clustering)
 
-## Automated ML
+
+## Classification models on Azure ML
+### Azure ML
+-Microsoft cloud based platform for ML
+-Create models with minimal coding
+-Deploy as web service or IoT endpoints
+
+### AutoML
+#### Data science questions (these  tasks are automated)
+-Which algorithm
+-Data scaling and normalization
+-Hyperparameters
 
 *************************************
 # Prepare for the Microsoft Azure AI Fundamentals (AI-900) certification
