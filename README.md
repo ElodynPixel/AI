@@ -241,13 +241,39 @@ SSML (XML based) (Speech synthesis markup language)
 
 ************************************
 # Creating a bot
-
 ## Conversational AI
+Conversational AI, as we have seen before is, the ability of a software agent generally referred to as a bot, to participate in a conversation
+	The ability of a agent to participate in conversation
+	Allow communication with skills familiar to users
+	Good for small set of predefined options
+	Bot framework + Cognitive services
 
+### Responsible AI for bots
+-Transparency about bot capabilities
+-Make it clear it is a bot
+-Enable human handoff
+-Respect cultural norms, privacy and data security
+-Ensure reliability
+-Accessibility standards
+-Accountability
+ 
 ## Bot framework
+-Is a set of SDKs
+-Secure and compliant (GDPR)
+-Bot connector
+
+### The QnA maker
+-Extracts question-answer pairs from content
+-Model improves over time
+-Perfect for bots
+
+#### Three options to built
+-Data sources
+-Manually
+-Chit chat
 
 ************************************
-# Workingg with ML solutions
+# Working with ML solutions
 
 ## Introduction to Machine Learning
 
