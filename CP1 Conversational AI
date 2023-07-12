@@ -1,0 +1,322 @@
+# CP 1- Conversational AI
+# Identify common conversational AI workloads
+### Conversational AI
+	Chatbots - communicating using natural language
+	Text - Websites or native applications
+	Voice - voice assitant
+
+
+## Overview of common conversational AI workloads
+- Augmenting existing capabilities
+- Content discovery
+- Self-service agents
+- Connecting with audience using different channels
+- Communicating using natural language
+- Providing rapid responses
+
+### Benefits
+- Reduced costs
+- Increased engagement
+- Improved accessibility
+
+## Features and characteristics of chatbots
+### Definitions
+- Chatbot
+	- Interactive software application
+- Dialogs
+	- The building blocks of conversational logic within a chatbot
+### Typical interactions in three high level steps
+- Send (Human sends a message to the chatbot)
+	- Known as an utterance
+- Receive (Chatbot receives messages and uses NLP to infer intent and entities within the message)
+- Respond (Chatbot sends an appropriate response)
+
+### Natural language processing (NLP)
+- Translating human language into something the machine can understand
+- Often a highly complex process
+- ML models and text analytics
+- User input is categorized into the following:
+	- Utterances - A phrase the user sends to the chatbot
+	Examples include
+		- I would like to place an order plz
+		- Can I place an order
+		- I would like to order
+	- Intents - The end goal the user wants to achieve when interacting with the chatbot
+	Examples include
+		- Place order
+			- I would like to place an order plz
+			- Can I place an order?
+			- I would like to order
+	- Entities - An item of interest within an utterance
+	Examples include
+		- I would like to order a new {product=phone}
+		- I would like a new {product=car} pls
+		- Can I have a new {product=keybord} pls
+Service responsible for these tasks in Azure is LUIS (Language Understanding Intelligence System)
+
+#### Dialogs
+A common pattern when creating a chatbot is to implement a RootDialog (type of swithcboard)
+
+### Connecting to chatbots- Channels
+Connect people to chatbots
+1. Web chat
+	1. Text interaction used on websites
+2. Voice
+	1. Voice-enabled websites/ smart devices such as Amazon Echo
+3. Telephony
+	1. Surfacing on IVRs by creating integrations with services such as Twilio
+
+### Azure bot service and channels
+- Connect to chatbots
+- Support for many channels
+- Surface your chatbot on websites, MS teams, Whatsapp and much more
+
+#### Web Chat
+- Default channel, automatically configured for you
+- Contains everything you need to host a chatbot on a webpage
+- Get started with the chatbot secret key and JavaScript
+
+#### Voice
+- Create robust voice-in, voice-out interactions
+- Direct Line Speech channel on Azure Speech services key
+- Leverage speech-to-text (STT) and text-to-speech (TTS)
+
+#### Telephony
+- Chatbot can accept phone calls
+- Azure communication services
+- Azure speech
+
+### Other popular channels
+- Alexa
+- Email
+- Slack
+- Telegram
+- Twilio
+
+## Building chatbots- What are your options?
+1. Bot framework SDK- Code-first experience for developers
+2. Bot framework composer- Developers and power users
+3. Power virtual agents- Citizen developers and business users
+
+### Bot framework SDK
+- Built chatbots that can be hosted in Azure
+- Rich object model makes it simple to interact with Azure Bot Service
+- Aimed at developers wit support for multiple languages
+
+### Bot framework comoser
+- Open-source IDE
+- Efficient way to design and model conversational logic
+- Click-and-create interface for chatbot development
+
+### Power virtual Agents (PVA)
+- Low code SaaS option
+- Click-and-create interface
+- Deep integrations with Power Platform
+Use Azure cognitive services to augment your chatbots intelligence 
+
+## Identify common use cases and workloads for conversational AI
+
+1. Informational- Information retrieval
+	1. Answer common questions
+	2. Return concise information
+	3. Information about public services or facilities
+	Benefits
+		- Reduce incoming telephone calls
+		- Optimize business costs
+		- Improve access to information
+		- Different ways to access information
+2. Customer service- Customer queries/ complaints
+	1. Answer customer queries
+	2. Check order status, cancel order, update a order
+	3. Amend account details
+	4. Hand off to a human agent
+	Benefits
+		- Augment call center  team
+		- Reduce call waiting times
+		- Improve operational cost
+3. IT Support- Augmenting human capacity
+	1. Answer common IT queries
+	2. Support self-service processes
+	3. Reset passwords
+	4. Raise new support tickets
+	Benefits
+		- Reduce volume of repetitive tasks
+		- Support staff can work on higher-value tasks
+		- Empower users and customers to self-serv
+
+## Additional workloads for conversational AI
+4. Ecommerce (Chatbot)- New ways to browse, purchase  or suggest products
+	1. Connect to back end
+	2. Suggest products or services
+	3. Display product catalog
+	4. Generate "Purchace Now" hyperlink
+	Benefits
+		- Guide customers through the shopping experience
+		- Flowing conversation for customers
+		- Personalized digital personal shopper
+5. Healthcare (Chatbot)- Improved pt healthcare experience
+	1. Monitor patient behavior
+	2. Provide automated medical information
+	3. Schedule medical appointments
+	4. Collect pt data
+	Benefits
+		- Instant access to medical support
+		- Anonymous interactions
+		- Reduce strain on healthcare professionals
+		- Support more patients
+	Smart devices
+		Voice channels
+		Amazon Alexa
+		Google assistant
+	Benefits
+		- Increased accessibility
+		- Different ways to consume information
+		- Widen reach of your product/ service
+1. Voice-Smart devices
+*************************************************************
+
+# Identify tools and Azure services for conversational AI workloads
+
+## Overview of Azure services used for conversational AI workloads
+1. Hosting- Accessible in the cloud
+	1. Microsoft Azure
+	2. Azure bot service (ABS)
+	3. Fully hosted
+2. Human language - Processing and understanding human language
+	1. Tools
+		1. Bot framework SDK
+		2. Bot framework composer
+		3. Pro code
+	Power virtual agents (PVA)
+		Ideal for citizen developers
+		Low code
+		Fusion teams = pro code + low code
+3. Developing - Building and testing chatbots
+
+## Overview of Azure bot service
+#### Defintions
+- ABS (Azure bot service)
+	- A cloud platform that provides an environment in which to host chatbots
+- fhjyf
+
+### ABS features
+1. Environment - Cloud platform that can host chatbots
+2. Bot building - Rapid building, publishing, maintaining, and testing of chatbots
+3. Integrations - Integrates with PVA, Support for bot framework sdk and composer
+https://portal.azure.com
+
+### Azure bot service Built, design and host conversational AI bots
+#### Azure bot service: Building
+- PVA (Low-code)
+- Bot framework composer (Low-code)
+- Bot framework sdk (Pro-code)
+
+## Overview of QnA maker
+#### Definitions
+- QnA maker
+	- A cloud service in azure
+- Knowledge base
+	- Content submitted to QnA maker service is stored in a structure known as knowledge base
+
+### Overview of QnA maker service
+1. NO code -Create and publish out-of-the-box capabilities for chatbots
+2. Auto-generate - Automatically generate question-and-answer pairs from assets (FAQ, Excel, Word, etc)
+3. Web portal- Create, train, edit, and publish knowledge base
+
+#### Leverage existing data
+- NLP
+- Knowledge base (KB)
+- Question-and-answer pairs used by chatbot
+
+ QNA maker 
+ - acts as a Conversational layer over existing assets
+ - Accelerate your conversational AI development
+
+### QnA maker Lifespan
+- Retiring on 31 March 2025
+- New questioning capability
+- Cognitive service for language
+
+## Overview of bot framework SDK
+1. Code - Creates chatbots that can be hosted in Azure
+2. Multiple languages - C#, JavaScript, Python, Java
+3. Simplifies - Builds on Azure bot services REST API
+
+#### definitions
+- State accessor
+	- Provide you with common mechanism to save/load data in a store
+
+### Using Bot framework SDK
+- Complete control over all aspects of chatbot logic
+- Coding experience required
+- Create highly customized conversational AI solutions
+- Procode option for creating conversational AI
+
+### Bot framework SDK key features
+1. Dialog
+	1. Building blocks for your chatbot
+	2. Encapsulate common functionality
+	3. Reusable
+2. Turn
+	1. Represents interaction
+	2. Incoming and outgoing messages
+	3. Between human and chatbot
+3. Activity
+	1. Represents messages between human and chatbot
+	2. Can contain text, images, speech, reactions and more
+	3. Sent back and forth within a dialog
+4. Prompts
+	1. Used to collect input
+	2. Can contain validation rules
+	3. Support for multiple data types, such as integers, strings and datetime
+
+
+
+## Overview of bot framework composer
+1. IDE - Open source from Microsoft
+2. Click and create - simple to use
+3. Build chatbots - Rapid development
+
+### Options for using composer
+1. Desktop
+2. Cloud installation
+3. Source code
+
+### Using bot framework composer
+- Simple way to create chatbots
+- Minimal coding experience required
+- Create highly customized conversational AI solutions
+- Pro-code option for creating conversational AI
+
+#### Key features of Bot framework composer
+1. Features
+	1. Designer canvas
+	2. Drag-and-drop activities
+	3. Integrates with third-party API
+2. Support for NLP and LUIS
+3. Author Text and speech variations
+4. Publish Directly to Azure
+	1. From Composer to Azure
+
+## Overview of bot framework emulator
+1. Desktop- open source from Microsoft
+2. Test - allows you to interact with your chatbot
+3. Debug - allows you to inspect messages and variables
+
+### Using bot framework emulator
+- Bot transcription files
+- All interactions between user and chatbot
+- Valuable debug insights
+- Test and debug your chatbofts
+
+### Debug insights
+- Channel
+- Message content
+- Date of interactions
+
+#### Debugging chatbots
+- Local
+- Remote
+
+#### Debugging production chatbots
+- Use ngrok
