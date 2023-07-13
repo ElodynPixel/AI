@@ -1,0 +1,221 @@
+# CP 2 Principles of Machine learning
+# Introduction
+
+## Getting started with the AI-900 ML exam
+Clustering
+Regression
+Classification
+
+## Overview of the Azure fundamentals certification
+
+### Levels of certification
+- Fundamentals - entry level
+- Associate -2-5y experience
+- Expert - Highest level of technical capability
+
+### The AI-900 exam
+- Entry level not focused on coding or implementation
+- AI Focus
+	- Azure cognitive services
+	- Azure bot service
+	- Azure ML
+- Non-AI focus
+	- Microsoft responsible AI principles
+
+### About this course
+- Low focus on coding
+- Cover workload differences and ML process
+- More hands-on and emphasis on model creation
+- Some Azure, database and development experience beneficial, but not required
+*************************************************************
+# Principles of ML
+
+## What is ML?
+- Artificial intelligence
+	- Reasoning: Draw conclusions from imperfect data
+	- Understanding: Interpret meaning on data, such as images, video, or audio
+	- Interacting: Communicate in more natural ways such as voice/ text
+- ML 
+	- is a subset of AI that trains computers to make predictions
+	- Several algorithm for specific uses
+		- Linear/logistic regression
+		- Support-vector machines
+		- Decision trees
+	- 
+
+### Five questions ML can answer-NB
+- Classification (A/B)
+	- >2= multiclass classification
+	- Options
+- Regression (How much/many)
+		- Predict value
+		- NUmbers
+- Anomaly detection (Is this weird?)
+	- Outliers
+- Clustering (How is this organized)
+	- Grouping
+- Reinforcement (What's next?)
+
+## Practice: Types of ML
+
+
+## ML services in Azure
+
+![[Pasted image 20230712142152.png]]
+
+- Cognitive services
+	- More flexibility to use
+	- Easier to use
+	- Prebuilt models (Cognitive services)
+	- Coding-level tools (Databricks 4 ex)
+
+### Azure ML
+- Microsoft cloud-based, no-code platform
+- Azure ML studio (graphical tool, supports SQL, R, and python)
+- https://ml.azure.com
+- Main unit of work  is a pipeline
+- Modules perform actions on a dataset
+- Deployment through Azure Container instances (ACI) or Azure KUbernetes service (AKS)
+
+## Creating an Azure ML resource
+- Workspace
+	- top-level
+- Azure ML resource
+- Basic (code) and enterprise (user) levels merged
+- Requirements
+	- Azure storage account
+	- Azure key vault
+	- Application insights
+	- Container registry
+
+
+*************************************************************
+# Creating an experiment in Azure ML
+
+
+## ML def
+- Features
+	- Data values that influence the projection of a model (i.e temperature)
+- Label (i.e rentals)
+- Overfitting
+	- If model tries too hard to guess exactly every single label instance it will not generalize well when inputting new data
+- Outliers
+		- Points that differ considerably from other observations
+
+Steps
+- Ingest data
+- Treat data
+- Split data
+- Train model
+- Score model
+- Evaluate model
+
+## The ML process: Data steps
+### Obtaining the data
+- Datastores
+	- Azure connection info
+	- Azure SQL database
+	- Azure Blob storage
+- Dataset
+	- Data structures/metadata
+	- Table, query/ stored procedure
+	- Files on a storage cntainer
+
+### Treating the data
+- Join data from multiple sources (common column)
+- Feature engineering: extract additional features from raw data
+- Feature selection "Select Columns on dataset"
+- Additional options: Clean missing data, normalize data, ect
+
+### Splitting the data
+- Training set
+- Validation set
+- Split considerations
+	- Training and validation set will have the same columns and features (split rows not columns)
+	- Training set> validation set
+	- 60/40 or 30/70
+	- Training and validation sets are distinct
+
+
+## The ML process: Model steps
+### What is model training?
+- Feeds the training set to an ML algorithm to create the model
+- three choices
+	- Label 
+	- Algorithm
+	- Compute
+
+### Choosing a label
+- Labeling is the process of tagging training data with known values
+- On classification and regression models you need to choose column containing label
+- Supervised
+	- Models learn from labeled dataset (Classification, regression)
+- Unsupervised
+	- Model works on datasets without a label, and groups data by features (Clustering)
+
+### Choosing the ML algorithm
+- Algorithms are the ML training code
+- Several options
+- Learn more
+	- https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-cheat-sheet
+	- 
+
+### The Azure ML compute
+- Influences both cost and performance when building models
+- Deploys a VM preconfigured for ML on hardware and software
+- Model scoring
+	- Generates a set of metrics about the model performance
+- Model evaluation
+	- Displays the statistics generated for model performance analysis
+
+## Creating an Azure ML model
+demof
+
+## Model evaluation metrics
+- Clustering
+	- Average distance to other center
+	- Avg distance to cluster center
+	- Nr of points
+	- Max distance to cluster center
+	- Avg distance to cluster center
+	- Combined evaluation
+- Regression
+	- MAE
+	- RMSE
+	- RAE
+	- RSE
+	- Coefficient of determination
+- Classification
+	- Accuracy, precision, recall, F1 score, AUC
+- https://docs.microsoft.com/en-us/azure/machine-learning/component-reference/evaluate-model
+- The confusion matrix (actual vs prediction)
+
+1. Microsoft responsible AI
+		1. Aims to address ethical problems related to AI and ML
+2. Model explainability
+	1. Adds transparency by highlighting features with high influence on the model (preview)
+
+## Performing model evaluation
+
+
+*************************************************************
+# Azure AutoML
+
+## Overview of the Azure AutoML
+- Data science questions automated by AutoML
+	- Which algorithm
+	- Data scaling and normalization
+	- Hyperparameters
+- Model deployment
+	- Deployment makes your model available externally
+	- 2 Deployment options
+		- For testing Azure Container instance (ACI)
+		- For production Azure Kubernetes Service (AKS)
+
+
+## Using Azure AutoML
+Demo
+https://www.microsoft.com/en-us/ai/ai-lab-projects
+https://docs.microsoft.com/en-us/azure/machine-learning
+https://docs.microsoft.com/en-us/learn/paths/create-no-code-predictive-models-azure-machine-learning
+*************************************************************
