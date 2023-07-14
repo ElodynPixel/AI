@@ -1,0 +1,281 @@
+CP 3 Comuter Vsion workload on Azure
+*************************************************************
+# Introduction
+## Understanding AI and computer vision
+
+## Understanding the AI-900 certification and exam
+- Entry level, not focused on coding or implementation
+- AI focus
+	- Cognitive services
+	- Bots
+	- Azure ML
+- Non-AI focus
+	- Responsible AI principles from Microsoft
+*************************************************************
+# Understanding AI Vision solutions
+## Understanding AI Vision solutions
+### Definitions
+- Computer vision
+	- AI field that allows computers to perceive the world visually
+- AI
+	- Allows computers to mimic capabilities of the human brain (Such as learning, recognizing patterns without needing to be explicitly coded for that, understanding)
+- Machine Learning (ML)
+	- Process of teaching/training a computer system to make predictions based on available data
+- Deep Learning (DL)
+	- Subset of ML based on artificial neural network
+- Convolution neural network (CNN)
+		- A class of neural networks
+- uuuig
+
+### Process
+- Camera
+	- Image is captured and converted into a picture/ image file
+- Pixels
+	- An image is made of several pixels (dots of a particular color)
+- Patterns
+	- Pixels might form patterns that a vision model can be trained to recognize
+
+### Data, computing, and expertise requirements
+- Large datasets (Coco, ImageNet)
+- Intensive computing (CPUs, GPUs, VPUs)
+- Advanced AI/ML expertise (TensorFlow, PyTorch, Keras, caffe)
+
+### The AI framework for Vision
+- AI
+- ML (A subset of AI)
+- DL (a subset of ML)
+	- Applications such as computer vision, NLP and speech recognition
+- CNN (subset of DL)
+	- a Class of neural networks
+	- Supervised learning
+	- For images
+	- Analyze images on multiple layers
+		- Edges
+		- Textures
+		- patterns
+		- object parts
+		- objects
+	- For videos a Recurrent Neural Network (RNN) is generally used
+		- Retain information that was already previously processed (Predicting an action)
+
+
+## Computer vision workloads
+- Image classification (categorize based on classes you define)
+- Object detection (adds a boundry box with coordinates of each object found on the picture)
+	- Can tell you what and where
+- Semantic segmentation
+	- Detects on pixel level which part of the image belongs to them
+- Image analysis
+		- Tags a picture based on items it contains and generates captions about them
+		- Can detect, recognize, compare faces, including facial features such as hair, glasses, age and emotions
+- Optical Character Recognition (OCR)
+	- Read text in both images and scan documents (Printed and handwriting)
+
+## The Azure Vision services
+### Azure cognitive services
+- Built AI-infused apps with no ML/AI knowledge
+- Highly refined models
+- Ample language support
+- Privacy assured
+- Low cost, including free tier
+
+### Vision services on Azure
+- Computer vision
+	- Workloads
+		- Classification
+		- Object detection
+		- Image analysis
+		- Limited OCR and facial recognition (small set of facial features such as age, gender)
+- Face API
+		- Detect
+			- Facial hair
+			- Glasses
+			- Emotions
+			- Facial detection and recognition
+			- Much more
+- Form recognizer 
+	- Read and comprehend text on a document
+- Custom vision
+	- Tailor a vision model according to your needs
+
+### Creating Azure vision resources
+- Create dedicated service
+	- Admin overhead (Several end points and keys to manage)
+- Create consolidated cognitive service
+	- Harder to analyze individual costs
+	- No free tier
+
+## Creating a vision resource in Azure
+https://portal.azure.com
+https://www.microsoft.com/en-us/ai/seeing-ai
+*************************************************************
+# The computer vision API
+
+### Definitions
+- Confidence level
+	- Index from zero to one indicating how sure algorithm is on supply description
+## The computer vision API
+- General purpose vision technology from Microsoft
+- Performs both image classification and object detection (bounding box with coordinates)
+- Accepts URLs and image binaries (JPG, GIF, PNG and BMP)
+- Performs scalable, automated image analysis
+
+### What the service can do
+- Detect color schemes on a picture including dominant foreground, background or whether in black and white
+- General description of what the picture is about
+- Additional information on facial detection
+	- Age
+	- Gender
+	- Coordinates of face on the image
+- Thumbnail generation
+	- Identifies most relevant part  of a picture
+- Generates tags, categories, brands and objects
+- Tags vs categories
+	- 2000 tags available, 86 different categories
+- Objects Computer vision able to detect 10000 of them
+	- Similar to taging but while tagging uses image clasification, objects and brands are based on object detection (bounding box with locations)
+
+- Optical Character Recognition (OCR)
+	- Detect  letters, numerals, punctuation/ other text elements on an image
+	- Language auto detection
+	- Two APIs
+		- OCR API (older, less text)
+		- Read API (newer, text-heavy)
+- Detect content that is adult such as Nudity or sexual acts,racy, gory (Content moderator)
+- Celebrities
+- Landmarks
+
+### Computer vision is a (CATCH ALL)
+Colors and descriptions
+Age, gender and face locatioin
+Thumbnails
+Categories, tags, brands and objects
+Handwritting and OCR
+
+Adult, racy, gory
+Line drawing and clip art
+Landmarks and celebrities
+
+## Working with the computer vision API
+demo
+https://aidemos.mirosoft.com
+https://azure.microsoft.com/en-us/services/cognitive-services
+*************************************************************
+# The Face API
+## The Face API
+### Facial recognition: Use cases
+- Security and identity validation
+- Social media
+- Intelligent monitoring
+- Advertising
+- Missing persons
+
+### Face detection vs face recognition
+#### Face detection
+- Detect gender attributes (features) such as gender, age, smile, hair (hair color and facial hair), head-pose, glasses makeup
+- Bounding box coordinates
+- Emotions (The closer to 1 the stronger the emotion attached to it)
+	- Neutral, anger, contempt, disgust
+	- Fear, happiness, sadness and surprise
+- Generates a set of 27 face landmarks in an associatd face ID
+- Picture sent is discarded after landmarks are generated and face ID expires 24hafter being generated
+- 
+#### Facial recognition
+- Identify people in pictures or your face for authentication
+- Process
+	- Create a persons group
+	- Register the persons
+	- Upload  face pictures (up to 248) (front facing, no profile)
+	- Train model
+- operations
+	- Verifies a face against the persons group
+	- Find similar
+	- Group (group pictures according to the faces)
+	- Identify (checks for possible face matches)
+
+
+## Working with the Face API
+demo
+https://github.com/microsoftLearning/AI-900-AIFundamentals
+*************************************************************
+# The Form Recognizer
+## The Form recognizer
+- OCR
+	- Well-established technology
+	- Common to most scanners
+- Limitations
+	- OCR can read the characters, but not understand the data
+- Form recognizer
+	- Uses ML to bring meaning to the values on the form
+
+### Definitions
+- Accepts PDFs nd imges (JPG, PNG, BMP, and TIFF)
+- Works asynchronously (two API calls)
+- Two versions (2.1 and 3.0 (recommended)
+- Officially belongs to Applid AI services category:
+	- https://docs.microsoft.com/azure/applie-ai-services/
+
+#### Form Recognizer options
+- Prebuilt models (Invoices, receipts, business cards, nd IDs)
+- Layout API
+- Custom  models, trained for your companies needs
+
+
+## Working with the Form recognizer
+demo
+https://formrecognizer.appliedai.azure.co/studio
+https://github.com/microsftLearning/AI-900-AIFundamentals
+*************************************************************
+# The custom Vision API
+## The custom vision API
+#### Custom vision vs computer vision
+- Computer vision  (Bottle)
+- Custom vision (Plastic bottle)
+
+#### Capabilities on custom vision
+- Object classification
+- Object detection (boundary box coordinates)
+- Transfer learning
+	- A neural network that applies knowledge gained from solving one problem to a different but related situation
+	- 1. New model training
+		- Requires a significant amount of data, time, computing, power and expertise
+	- 2. Transfer earning
+		- Starts from an existing, trained model, considerably decreasing training efforts
+
+#### Custom vision details
+- Interactive portal www.customvision.ai 
+- Optionally use REST or SDK for training
+- Two separate endpoints and keys for training and predictions
+- Several specialized domains
+- Supports edge computing (compact models)
+
+#### Model Development process
+- Create resources
+- Create projects
+	- Classification or object detection
+	- multiclass or multilabel
+	- Domain
+- Upload andd tag images
+- Train model
+- Evaluate and test(precision and recall)
+- Deploy model
+
+#### Custom vision Best practices
+- Ideally At least 50/tag
+- Balanced input of images
+- Add negative images (classification only)
+- Fix wrong predictions to improve model
+
+## Working with the custom vision API
+demo
+https://www.customvision.ai
+
+
+## Custom vision API: Additional resources
+https://aka.ms/explore-computer-vision
+https://aischool.microsoft.com
+https://aidemos.microsoft.com
+https://docs.microsoft.com/en-us/zure/cognitive-services/
+https://github.com/MicrosoftLearning/AI-900-AIFundamentals
+*************************************************************
+
