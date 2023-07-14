@@ -198,3 +198,32 @@ https://azure.microsoft.com/en-us/services/cognitive-services
 demo
 https://github.com/microsoftLearning/AI-900-AIFundamentals
 *************************************************************
+# The Form Recognizer
+## The Form recognizer
+- OCR
+	- Well-established technology
+	- Common to most scanners
+- Limitations
+	- OCR can read the characters, but not understand the data
+- Form recognizer
+	- Uses ML to bring meaning to the values on the form
+
+### Definitions
+- Accepts PDFs nd imges (JPG, PNG, BMP, and TIFF)
+- Works asynchronously (two API calls)
+- Two versions (2.1 and 3.0 (recommended)
+- Officially belongs to Applid AI services category:
+	- https://docs.microsoft.com/azure/applie-ai-services/
+
+#### Form Recognizer options
+- Prebuilt models (Invoices, receipts, business cards, nd IDs)
+- Layout API
+- Custom  models, trained for your companies needs
+
+
+## Working with the Form recognizer
+demo
+https://formrecognizer.appliedai.azure.co/studio
+https://github.com/microsftLearning/AI-900-AIFundamentals
+*************************************************************
+
