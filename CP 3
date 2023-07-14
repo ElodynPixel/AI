@@ -12,3 +12,100 @@ CP 3 Comuter Vsion workload on Azure
 - Non-AI focus
 	- Responsible AI principles from Microsoft
 *************************************************************
+# Understanding AI Vision solutions
+## Understanding AI Vision solutions
+### Definitions
+- Computer vision
+	- AI field that allows computers to perceive the world visually
+- AI
+	- Allows computers to mimic capabilities of the human brain (Such as learning, recognizing patterns without needing to be explicitly coded for that, understanding)
+- Machine Learning (ML)
+	- Process of teaching/training a computer system to make predictions based on available data
+- Deep Learning (DL)
+	- Subset of ML based on artificial neural network
+- Convolution neural network (CNN)
+		- A class of neural networks
+- uuuig
+
+### Process
+- Camera
+	- Image is captured and converted into a picture/ image file
+- Pixels
+	- An image is made of several pixels (dots of a particular color)
+- Patterns
+	- Pixels might form patterns that a vision model can be trained to recognize
+
+### Data, computing, and expertise requirements
+- Large datasets (Coco, ImageNet)
+- Intensive computing (CPUs, GPUs, VPUs)
+- Advanced AI/ML expertise (TensorFlow, PyTorch, Keras, caffe)
+
+### The AI framework for Vision
+- AI
+- ML (A subset of AI)
+- DL (a subset of ML)
+	- Applications such as computer vision, NLP and speech recognition
+- CNN (subset of DL)
+	- a Class of neural networks
+	- Supervised learning
+	- For images
+	- Analyze images on multiple layers
+		- Edges
+		- Textures
+		- patterns
+		- object parts
+		- objects
+	- For videos a Recurrent Neural Network (RNN) is generally used
+		- Retain information that was already previously processed (Predicting an action)
+
+
+## Computer vision workloads
+- Image classification (categorize based on classes you define)
+- Object detection (adds a boundry box with coordinates of each object found on the picture)
+	- Can tell you what and where
+- Semantic segmentation
+	- Detects on pixel level which part of the image belongs to them
+- Image analysis
+		- Tags a picture based on items it contains and generates captions about them
+		- Can detect, recognize, compare faces, including facial features such as hair, glasses, age and emotions
+- Optical Character Recognition (OCR)
+	- Read text in both images and scan documents (Printed and handwriting)
+
+## The Azure Vision services
+### Azure cognitive services
+- Built AI-infused apps with no ML/AI knowledge
+- Highly refined models
+- Ample language support
+- Privacy assured
+- Low cost, including free tier
+
+### Vision services on Azure
+- Computer vision
+	- Workloads
+		- Classification
+		- Object detection
+		- Image analysis
+		- Limited OCR and facial recognition (small set of facial features such as age, gender)
+- Face API
+		- Detect
+			- Facial hair
+			- Glasses
+			- Emotions
+			- Facial detection and recognition
+			- Much more
+- Form recognizer 
+	- Read and comprehend text on a document
+- Custom vision
+	- Tailor a vision model according to your needs
+
+### Creating Azure vision resources
+- Create dedicated service
+	- Admin overhead (Several end points and keys to manage)
+- Create consolidated cognitive service
+	- Harder to analyze individual costs
+	- No free tier
+
+## Creating a vision resource in Azure
+https://portal.azure.com
+https://www.microsoft.com/en-us/ai/seeing-ai
+*************************************************************
