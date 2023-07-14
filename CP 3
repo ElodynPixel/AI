@@ -161,3 +161,40 @@ demo
 https://aidemos.mirosoft.com
 https://azure.microsoft.com/en-us/services/cognitive-services
 *************************************************************
+# The Face API
+## The Face API
+### Facial recognition: Use cases
+- Security and identity validation
+- Social media
+- Intelligent monitoring
+- Advertising
+- Missing persons
+
+### Face detection vs face recognition
+#### Face detection
+- Detect gender attributes (features) such as gender, age, smile, hair (hair color and facial hair), head-pose, glasses makeup
+- Bounding box coordinates
+- Emotions (The closer to 1 the stronger the emotion attached to it)
+	- Neutral, anger, contempt, disgust
+	- Fear, happiness, sadness and surprise
+- Generates a set of 27 face landmarks in an associatd face ID
+- Picture sent is discarded after landmarks are generated and face ID expires 24hafter being generated
+- 
+#### Facial recognition
+- Identify people in pictures or your face for authentication
+- Process
+	- Create a persons group
+	- Register the persons
+	- Upload  face pictures (up to 248) (front facing, no profile)
+	- Train model
+- operations
+	- Verifies a face against the persons group
+	- Find similar
+	- Group (group pictures according to the faces)
+	- Identify (checks for possible face matches)
+
+
+## Working with the Face API
+demo
+https://github.com/microsoftLearning/AI-900-AIFundamentals
+*************************************************************
