@@ -109,3 +109,55 @@ CP 3 Comuter Vsion workload on Azure
 https://portal.azure.com
 https://www.microsoft.com/en-us/ai/seeing-ai
 *************************************************************
+# The computer vision API
+
+### Definitions
+- Confidence level
+	- Index from zero to one indicating how sure algorithm is on supply description
+## The computer vision API
+- General purpose vision technology from Microsoft
+- Performs both image classification and object detection (bounding box with coordinates)
+- Accepts URLs and image binaries (JPG, GIF, PNG and BMP)
+- Performs scalable, automated image analysis
+
+### What the service can do
+- Detect color schemes on a picture including dominant foreground, background or whether in black and white
+- General description of what the picture is about
+- Additional information on facial detection
+	- Age
+	- Gender
+	- Coordinates of face on the image
+- Thumbnail generation
+	- Identifies most relevant part  of a picture
+- Generates tags, categories, brands and objects
+- Tags vs categories
+	- 2000 tags available, 86 different categories
+- Objects Computer vision able to detect 10000 of them
+	- Similar to taging but while tagging uses image clasification, objects and brands are based on object detection (bounding box with locations)
+
+- Optical Character Recognition (OCR)
+	- Detect  letters, numerals, punctuation/ other text elements on an image
+	- Language auto detection
+	- Two APIs
+		- OCR API (older, less text)
+		- Read API (newer, text-heavy)
+- Detect content that is adult such as Nudity or sexual acts,racy, gory (Content moderator)
+- Celebrities
+- Landmarks
+
+### Computer vision is a (CATCH ALL)
+Colors and descriptions
+Age, gender and face locatioin
+Thumbnails
+Categories, tags, brands and objects
+Handwritting and OCR
+
+Adult, racy, gory
+Line drawing and clip art
+Landmarks and celebrities
+
+## Working with the computer vision API
+demo
+https://aidemos.mirosoft.com
+https://azure.microsoft.com/en-us/services/cognitive-services
+*************************************************************
