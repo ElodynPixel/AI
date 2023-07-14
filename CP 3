@@ -226,4 +226,56 @@ demo
 https://formrecognizer.appliedai.azure.co/studio
 https://github.com/microsftLearning/AI-900-AIFundamentals
 *************************************************************
+# The custom Vision API
+## The custom vision API
+#### Custom vision vs computer vision
+- Computer vision  (Bottle)
+- Custom vision (Plastic bottle)
+
+#### Capabilities on custom vision
+- Object classification
+- Object detection (boundary box coordinates)
+- Transfer learning
+	- A neural network that applies knowledge gained from solving one problem to a different but related situation
+	- 1. New model training
+		- Requires a significant amount of data, time, computing, power and expertise
+	- 2. Transfer earning
+		- Starts from an existing, trained model, considerably decreasing training efforts
+
+#### Custom vision details
+- Interactive portal www.customvision.ai 
+- Optionally use REST or SDK for training
+- Two separate endpoints and keys for training and predictions
+- Several specialized domains
+- Supports edge computing (compact models)
+
+#### Model Development process
+- Create resources
+- Create projects
+	- Classification or object detection
+	- multiclass or multilabel
+	- Domain
+- Upload andd tag images
+- Train model
+- Evaluate and test(precision and recall)
+- Deploy model
+
+#### Custom vision Best practices
+- Ideally At least 50/tag
+- Balanced input of images
+- Add negative images (classification only)
+- Fix wrong predictions to improve model
+
+## Working with the custom vision API
+demo
+https://www.customvision.ai
+
+
+## Custom vision API: Additional resources
+https://aka.ms/explore-computer-vision
+https://aischool.microsoft.com
+https://aidemos.microsoft.com
+https://docs.microsoft.com/en-us/zure/cognitive-services/
+https://github.com/MicrosoftLearning/AI-900-AIFundamentals
+*************************************************************
 
