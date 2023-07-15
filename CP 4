@@ -1,0 +1,114 @@
+CP 4 Natural language processing Workloads on Azure
+*************************************************************
+# Introduction
+## Passing the AI-900 NLP domain
+#### Responsible AI Principles
+- Fairness
+- Reliability and Safety
+- Inclusiveness
+- Privacy
+- Accountability
+- Transparency
+
+
+## What you should know
+- Microsoft Azure Fundmentals
+	- https://learn.microsft.com/en-us/certificatons/azure-fundmentals/
+
+*************************************************************
+# Get stared with Natural Language processing (NLP)
+## Understanding NLP
+- Analyzing text is a process where you evaluate different aspects of a document/phrase in order to gain insights into the context of that text
+#### Text analytics
+- A process where an artificial intelligence algorithm evaluates attributes i text to determine specific insights
+- Commonly used techniques used to built software to analyze text
+	- Statistical analysis
+		- Remove common stock words
+	- Frequency analysis
+		- How often each word appears
+	- Stemming (lemmatizaton) algorithms (normalize words before counting them)
+		- linguistic structure rules to analyze sentences
+			- Breaking down sentences into indistinct structures such as a nun phrase (which itself contains nouns, verbs, adjectives and so on)
+	- Two-word phrase= bigram
+	- three-word phrase= trigram
+- Words encoding
+	- Encoding text data as numeric features that can be used to train a machine learning model
+	- A technique often used to perform sentiment analysis in which a document can be classified according to positive or negative
+- Vectorized models
+	- Capture semantic relationships between words by assigning them to locations in an n-dimensional space
+	- This modeling technique might assign values to the words photo and image to locate them close to one another
+
+#### Azure cognitive services
+Decision
+Language (can simplify application development by using pre-v trained models)
+Speech
+Vision
+Web search
+## Support use cases with the language service
+
+
+## Determine the language of a text
+
+
+## Analyze the sentiment of a text
+
+
+## Extract key phrases from a text
+
+
+## Identify and categorize entitites
+
+*************************************************************
+# Responsible AI
+## Understand challenges of ethical AI
+
+
+## Building trust and power with interpretability
+
+
+## Explain text analytics model with InterpreText
+
+*************************************************************
+# Cognitive services: Speech
+## Understand the Speech resource of Cognitive Services
+
+
+## Use Speech-To-Text (STT) to support inclusiveness
+
+
+## Use Text-To-Speech (TTS) to suport inclusiveness
+
+*************************************************************
+# Cognitive service: Translate
+## Understand the abilities of the Translate service
+
+
+## Use the Translate resource on text data
+
+
+
+## Use the Translate resource on audio data
+
+*************************************************************
+# Language Understanding Intelligence System (LUIS)
+## Getting started with Language understanding
+
+
+## Create and train a Language Understanding model
+*************************************************************
+# Conversational AI
+## How and where bots can be used
+
+
+## Understand features of a QnA bot
+
+
+## Create a QnA bot
+
+
+## Get started with the Azure Bot Framework
+
+
+## Create bot with the Bot Framework SDK
+
+*************************************************************
