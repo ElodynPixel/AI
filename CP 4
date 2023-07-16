@@ -95,8 +95,18 @@ Web search
 
 
 ## Create and train a Language Understanding model
+
 *************************************************************
 # Conversational AI
+Knowledge base - of question and answer pairs - usually with some built-in natural language processing model to enable questions that can be phrased in multiple ways to be understood with the same semantic meaning.
+A _bot service_ that provides an interface to the knowledge base through one or more channels.
+
+- Language and Azure bot service
+- Language service. 
+The Language service includes a custom question answering feature that enables you to create a knowledge base of question and answer pairs that can be queried using natural language input.
+- Azure Bot service. 
+This service provides a framework for developing, publishing, and managing bots on Azure.
+
 ## How and where bots can be used
 
 
