@@ -1,322 +1,881 @@
-# CP 1- Conversational AI
-# Identify common conversational AI workloads
-### Conversational AI
-	Chatbots - communicating using natural language
-	Text - Websites or native applications
-	Voice - voice assitant
+## What is AI?
+
+Simply put, AI is the creation of software that imitates human behaviors and capabilities. Key workloads include:
+
+- **Machine learning** - This is often the foundation for an AI system, and is the way we "teach" a computer model to make predictions and draw conclusions from data.
+- **Anomaly detection** - The capability to automatically detect errors or unusual activity in a system.
+- **Computer vision** - The capability of software to interpret the world visually through cameras, video, and images.
+- **Natural language processing** - The capability for a computer to interpret written or spoken language, and respond in kind.
+- **Knowledge mining** - The capability to extract information from large volumes of often unstructured data to create a searchable knowledge store.
+
+## Machine Learning
+Machine Learning is the foundation for most AI solutions.
+## How machine learning works
+
+So how do machines learn?
+
+The answer is, from data. In today's world, we create huge volumes of data as we go about our everyday lives. From the text messages, emails, and social media posts we send to the photographs and videos we take on our phones, we generate massive amounts of information. More data still is created by millions of sensors in our homes, cars, cities, public transport infrastructure, and factories.
+
+Data scientists can use all of that data to train machine learning models that can make predictions and inferences based on the relationships they find in the data.
+
+For example, suppose an environmental conservation organization wants volunteers to identify and catalog different species of wildflower using a phone app. The following animation shows how machine learning can be used to enable this scenario.
+
+![Machine Learning](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/machine-learn.gif)
+
+1. A team of botanists and scientists collect data on wildflower samples.
+2. The team labels the samples with the correct species.
+3. The labeled data is processed using an algorithm that finds relationships between the features of the samples and the labeled species.
+4. The results of the algorithm are encapsulated in a model.
+5. When new samples are found by volunteers, the model can identify the correct species label.
+
+## Machine learning in Microsoft Azure
+
+Microsoft Azure provides the **Azure Machine Learning** service - a cloud-based platform for creating, managing, and publishing machine learning models. Azure Machine Learning provides the following features and capabilities:
 
 
-## Overview of common conversational AI workloads
-- Augmenting existing capabilities
-- Content discovery
-- Self-service agents
-- Connecting with audience using different channels
-- Communicating using natural language
-- Providing rapid responses
+|Automated machine learning|This feature enables non-experts to quickly create an effective machine learning model from data.|
+|Azure Machine Learning designer|A graphical interface enabling no-code development of machine learning solutions.|
+|Data and compute management|Cloud-based data storage and compute resources that professional data scientists can use to run data experiment code at scale.|
+|Pipelines|Data scientists, software engineers, and IT operations professionals can define pipelines to orchestrate model training, deployment, and management tasks.|
 
-### Benefits
-- Reduced costs
-- Increased engagement
-- Improved accessibility
-
-## Features and characteristics of chatbots
-### Definitions
-- Chatbot
-	- Interactive software application
-- Dialogs
-	- The building blocks of conversational logic within a chatbot
-### Typical interactions in three high level steps
-- Send (Human sends a message to the chatbot)
-	- Known as an utterance
-- Receive (Chatbot receives messages and uses NLP to infer intent and entities within the message)
-- Respond (Chatbot sends an appropriate response)
-
-### Natural language processing (NLP)
-- Translating human language into something the machine can understand
-- Often a highly complex process
-- ML models and text analytics
-- User input is categorized into the following:
-	- Utterances - A phrase the user sends to the chatbot
-	Examples include
-		- I would like to place an order plz
-		- Can I place an order
-		- I would like to order
-	- Intents - The end goal the user wants to achieve when interacting with the chatbot
-	Examples include
-		- Place order
-			- I would like to place an order plz
-			- Can I place an order?
-			- I would like to order
-	- Entities - An item of interest within an utterance
-	Examples include
-		- I would like to order a new {product=phone}
-		- I would like a new {product=car} pls
-		- Can I have a new {product=keybord} pls
-Service responsible for these tasks in Azure is LUIS (Language Understanding Intelligence System)
-
-#### Dialogs
-A common pattern when creating a chatbot is to implement a RootDialog (type of swithcboard)
-
-### Connecting to chatbots- Channels
-Connect people to chatbots
-1. Web chat
-	1. Text interaction used on websites
-2. Voice
-	1. Voice-enabled websites/ smart devices such as Amazon Echo
-3. Telephony
-	1. Surfacing on IVRs by creating integrations with services such as Twilio
-
-### Azure bot service and channels
-- Connect to chatbots
-- Support for many channels
-- Surface your chatbot on websites, MS teams, Whatsapp and much more
-
-#### Web Chat
-- Default channel, automatically configured for you
-- Contains everything you need to host a chatbot on a webpage
-- Get started with the chatbot secret key and JavaScript
-
-#### Voice
-- Create robust voice-in, voice-out interactions
-- Direct Line Speech channel on Azure Speech services key
-- Leverage speech-to-text (STT) and text-to-speech (TTS)
-
-#### Telephony
-- Chatbot can accept phone calls
-- Azure communication services
-- Azure speech
-
-### Other popular channels
-- Alexa
-- Email
-- Slack
-- Telegram
-- Twilio
-
-## Building chatbots- What are your options?
-1. Bot framework SDK- Code-first experience for developers
-2. Bot framework composer- Developers and power users
-3. Power virtual agents- Citizen developers and business users
-
-### Bot framework SDK
-- Built chatbots that can be hosted in Azure
-- Rich object model makes it simple to interact with Azure Bot Service
-- Aimed at developers wit support for multiple languages
-
-### Bot framework comoser
-- Open-source IDE
-- Efficient way to design and model conversational logic
-- Click-and-create interface for chatbot development
-
-### Power virtual Agents (PVA)
-- Low code SaaS option
-- Click-and-create interface
-- Deep integrations with Power Platform
-Use Azure cognitive services to augment your chatbots intelligence 
-
-## Identify common use cases and workloads for conversational AI
-
-1. Informational- Information retrieval
-	1. Answer common questions
-	2. Return concise information
-	3. Information about public services or facilities
-	Benefits
-		- Reduce incoming telephone calls
-		- Optimize business costs
-		- Improve access to information
-		- Different ways to access information
-2. Customer service- Customer queries/ complaints
-	1. Answer customer queries
-	2. Check order status, cancel order, update a order
-	3. Amend account details
-	4. Hand off to a human agent
-	Benefits
-		- Augment call center  team
-		- Reduce call waiting times
-		- Improve operational cost
-3. IT Support- Augmenting human capacity
-	1. Answer common IT queries
-	2. Support self-service processes
-	3. Reset passwords
-	4. Raise new support tickets
-	Benefits
-		- Reduce volume of repetitive tasks
-		- Support staff can work on higher-value tasks
-		- Empower users and customers to self-serv
-
-## Additional workloads for conversational AI
-4. Ecommerce (Chatbot)- New ways to browse, purchase  or suggest products
-	1. Connect to back end
-	2. Suggest products or services
-	3. Display product catalog
-	4. Generate "Purchace Now" hyperlink
-	Benefits
-		- Guide customers through the shopping experience
-		- Flowing conversation for customers
-		- Personalized digital personal shopper
-5. Healthcare (Chatbot)- Improved pt healthcare experience
-	1. Monitor patient behavior
-	2. Provide automated medical information
-	3. Schedule medical appointments
-	4. Collect pt data
-	Benefits
-		- Instant access to medical support
-		- Anonymous interactions
-		- Reduce strain on healthcare professionals
-		- Support more patients
-	Smart devices
-		Voice channels
-		Amazon Alexa
-		Google assistant
-	Benefits
-		- Increased accessibility
-		- Different ways to consume information
-		- Widen reach of your product/ service
-1. Voice-Smart devices
-*************************************************************
-
-# Identify tools and Azure services for conversational AI workloads
-
-## Overview of Azure services used for conversational AI workloads
-1. Hosting- Accessible in the cloud
-	1. Microsoft Azure
-	2. Azure bot service (ABS)
-	3. Fully hosted
-2. Human language - Processing and understanding human language
-	1. Tools
-		1. Bot framework SDK
-		2. Bot framework composer
-		3. Pro code
-	Power virtual agents (PVA)
-		Ideal for citizen developers
-		Low code
-		Fusion teams = pro code + low code
-3. Developing - Building and testing chatbots
-
-## Overview of Azure bot service
-#### Defintions
-- ABS (Azure bot service)
-	- A cloud platform that provides an environment in which to host chatbots
-- fhjyf
-
-### ABS features
-1. Environment - Cloud platform that can host chatbots
-2. Bot building - Rapid building, publishing, maintaining, and testing of chatbots
-3. Integrations - Integrates with PVA, Support for bot framework sdk and composer
-https://portal.azure.com
-
-### Azure bot service Built, design and host conversational AI bots
-#### Azure bot service: Building
-- PVA (Low-code)
-- Bot framework composer (Low-code)
-- Bot framework sdk (Pro-code)
-
-## Overview of QnA maker
-#### Definitions
-- QnA maker
-	- A cloud service in azure
-- Knowledge base
-	- Content submitted to QnA maker service is stored in a structure known as knowledge base
-
-### Overview of QnA maker service
-1. NO code -Create and publish out-of-the-box capabilities for chatbots
-2. Auto-generate - Automatically generate question-and-answer pairs from assets (FAQ, Excel, Word, etc)
-3. Web portal- Create, train, edit, and publish knowledge base
-
-#### Leverage existing data
-- NLP
-- Knowledge base (KB)
-- Question-and-answer pairs used by chatbot
-
- QNA maker 
- - acts as a Conversational layer over existing assets
- - Accelerate your conversational AI development
-
-### QnA maker Lifespan
-- Retiring on 31 March 2025
-- New questioning capability
-- Cognitive service for language
-
-## Overview of bot framework SDK
-1. Code - Creates chatbots that can be hosted in Azure
-2. Multiple languages - C#, JavaScript, Python, Java
-3. Simplifies - Builds on Azure bot services REST API
-
-#### definitions
-- State accessor
-	- Provide you with common mechanism to save/load data in a store
-
-### Using Bot framework SDK
-- Complete control over all aspects of chatbot logic
-- Coding experience required
-- Create highly customized conversational AI solutions
-- Procode option for creating conversational AI
-
-### Bot framework SDK key features
-1. Dialog
-	1. Building blocks for your chatbot
-	2. Encapsulate common functionality
-	3. Reusable
-2. Turn
-	1. Represents interaction
-	2. Incoming and outgoing messages
-	3. Between human and chatbot
-3. Activity
-	1. Represents messages between human and chatbot
-	2. Can contain text, images, speech, reactions and more
-	3. Sent back and forth within a dialog
-4. Prompts
-	1. Used to collect input
-	2. Can contain validation rules
-	3. Support for multiple data types, such as integers, strings and datetime
+## Anomaly detection
+# Understand anomaly detection
 
 
+Imagine you're creating a software system to monitor credit card transactions and detect unusual usage patterns that might indicate fraud. Or an application that tracks activity in an automated production line and identifies failures. Or a racing car telemetry system that uses sensors to proactively warn engineers about potential mechanical failures before they happen.
 
-## Overview of bot framework composer
-1. IDE - Open source from Microsoft
-2. Click and create - simple to use
-3. Build chatbots - Rapid development
+These kinds of scenario can be addressed by using _anomaly detection_ - a machine learning based technique that analyzes data over time and identifies unusual changes.
 
-### Options for using composer
-1. Desktop
-2. Cloud installation
-3. Source code
+Let's explore how anomaly detection might help in the racing car scenario.
 
-### Using bot framework composer
-- Simple way to create chatbots
-- Minimal coding experience required
-- Create highly customized conversational AI solutions
-- Pro-code option for creating conversational AI
+![A race car drives past and an instrument panel shows telemetry values, which vary over time. When an anomaly occurs, a warning is displayed and the car stops.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/anomaly-detection.gif)
 
-#### Key features of Bot framework composer
-1. Features
-	1. Designer canvas
-	2. Drag-and-drop activities
-	3. Integrates with third-party API
-2. Support for NLP and LUIS
-3. Author Text and speech variations
-4. Publish Directly to Azure
-	1. From Composer to Azure
+1. Sensors in the car collect telemetry, such as engine revolutions, brake temperature, and so on.
+2. An anomaly detection model is trained to understand expected fluctuations in the telemetry measurements over time.
+3. If a measurement occurs outside of the normal expected range, the model reports an anomaly that can be used to alert the race engineer to call the driver in for a pit stop to fix the issue before it forces retirement from the race.
 
-## Overview of bot framework emulator
-1. Desktop- open source from Microsoft
-2. Test - allows you to interact with your chatbot
-3. Debug - allows you to inspect messages and variables
+## Anomaly detection in Microsoft Azure
 
-### Using bot framework emulator
-- Bot transcription files
-- All interactions between user and chatbot
-- Valuable debug insights
-- Test and debug your chatbofts
+In Microsoft Azure, the **Anomaly Detector** service provides an application programming interface (API) that developers can use to create anomaly detection solutions.
 
-### Debug insights
-- Channel
-- Message content
-- Date of interactions
+To learn more, view the [Anomaly Detector service web site](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/)
 
-#### Debugging chatbots
-- Local
-- Remote
+## Computer vision
+# Understand computer vision
 
-#### Debugging production chatbots
-- Use ngrok
+- 3 minutes
+
+Computer Vision is an area of AI that deals with visual processing. Let's explore some of the possibilities that computer vision brings.
+
+The **Seeing AI** app is a great example of the power of computer vision. Designed for the blind and low vision community, the Seeing AI app harnesses the power of AI to open up the visual world and describe nearby people, text and objects.
+
+## Computer Vision models and capabilities
+
+Most computer vision solutions are based on machine learning models that can be applied to visual input from cameras, videos, or images. The following table describes common computer vision tasks.
+
+|Task|Description|
+|---|---|
+|Image classification|![An image of a taxi with the label "Taxi"](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/image-classification.png)  <br>Image classification involves training a machine learning model to classify images based on their contents. For example, in a traffic monitoring solution you might use an image classification model to classify images based on the type of vehicle they contain, such as taxis, buses, cyclists, and so on.|
+|Object detection|![An image of a street with buses, cars, and cyclists identified and highlighted with a bounding box](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/object-detection.png)  <br>Object detection machine learning models are trained to classify individual objects within an image, and identify their location with a bounding box. For example, a traffic monitoring solution might use object detection to identify the location of different classes of vehicle.|
+|Semantic segmentation|![An image of a street with the pixels belonging to buses, cars, and cyclists identified](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/semantic-segmentation.png)  <br>Semantic segmentation is an advanced machine learning technique in which individual pixels in the image are classified according to the object to which they belong. For example, a traffic monitoring solution might overlay traffic images with "mask" layers to highlight different vehicles using specific colors.|
+|Image analysis|![An image of a person with a dog on a street and the caption "A person with a dog on a street"](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/image-analysis.png)  <br>You can create solutions that combine machine learning models with advanced image analysis techniques to extract information from images, including "tags" that could help catalog the image or even descriptive captions that summarize the scene shown in the image.|
+|Face detection, analysis, and recognition|![An image of multiple people on a city street with their faces highlighted](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/face-analysis.png)  <br>Face detection is a specialized form of object detection that locates human faces in an image. This can be combined with classification and facial geometry analysis techniques to recognize individuals based on their facial features.|
+|Optical character recognition (OCR)|![An image of a building with the sign "Toronto Dominion Bank", which is highlighted](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/ocr.png)  <br>Optical character recognition is a technique used to detect and read text in images. You can use OCR to read text in photographs (for example, road signs or store fronts) or to extract information from scanned documents such as letters, invoices, or forms.|
+
+## Computer vision services in Microsoft Azure
+
+Microsoft Azure provides the following cognitive services to help you create computer vision solutions:
+
+|Service|Capabilities|
+|---|---|
+|**Computer Vision**|You can use this service to analyze images and video, and extract descriptions, tags, objects, and text.|
+|**Custom Vision**|Use this service to train custom image classification and object detection models using your own images.|
+|**Face**|The Face service enables you to build face detection and facial recognition solutions.|
+|**Form Recognizer**|Use this service to extract information from scanned forms and invoices.|
+
+# Natural Language Processing (NLP)
+# Understand natural language processing
+
+
+Natural language processing (NLP) is the area of AI that deals with creating software that understands written and spoken language.
+
+NLP enables you to create software that can:
+
+- Analyze and interpret text in documents, email messages, and other sources.
+- Interpret spoken language, and synthesize speech responses.
+- Automatically translate spoken or written phrases between languages.
+- Interpret commands and determine appropriate actions.
+
+For example, _Starship Commander_ is a virtual reality (VR) game from Human Interact that takes place in a science fiction world. The game uses natural language processing to enable players to control the narrative and interact with in-game characters and starship systems.
+
+## Natural language processing in Microsoft Azure
+
+In Microsoft Azure, you can use the following cognitive services to build natural language processing solutions:
+
+|Service|Capabilities|
+|---|---|
+|**Language**|Use this service to access features for understanding and analyzing text, training language models that can understand spoken or text-based commands, and building intelligent applications.|
+|**Translator**|Use this service to translate text between more than 60 languages.|
+|**Speech**|Use this service to recognize and synthesize speech, and to translate spoken languages.|
+|**Azure Bot**|This service provides a platform for conversational AI, the capability of a software "agent" to participate in a conversation. Developers can use the _Bot Framework_ to create a bot and manage it with Azure Bot Service - integrating back-end services like Language, and connecting to channels for web chat, email, Microsoft Teams, and others.|
+
+
+# Knowledge mining
+## Understand knowledge mining
+
+Knowledge mining is the term used to describe solutions that involve extracting information from large volumes of often unstructured data to create a searchable knowledge store.
+
+## Knowledge mining in Microsoft Azure
+
+One of these knowledge mining solutions is **Azure Cognitive Search**, a private, enterprise, search solution that has tools for building indexes. The indexes can then be used for internal only use, or to enable searchable content on public facing internet assets.
+
+Azure Cognitive Search can utilize the built-in AI capabilities of Azure Cognitive Services such as image processing, content extraction, and natural language processing to perform knowledge mining of documents. The product's AI capabilities makes it possible to index previously unsearchable documents and to extract and surface insights from large amounts of data quickly.
+
+# Understand Responsible AI
+
+At Microsoft, AI software development is guided by a set of six principles, designed to ensure that AI applications provide amazing solutions to difficult problems without any unintended negative consequences.
+
+## Fairness
+
+AI systems should treat all people fairly. For example, suppose you create a machine learning model to support a loan approval application for a bank. The model should predict whether the loan should be approved or denied without bias. This bias could be based on gender, ethnicity, or other factors that result in an unfair advantage or disadvantage to specific groups of applicants.
+
+Azure Machine Learning includes the capability to interpret models and quantify the extent to which each feature of the data influences the model's prediction. This capability helps data scientists and developers identify and mitigate bias in the model.
+
+Another example is Microsoft's implementation of [Responsible AI with the Face service](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/), which retires facial recognition capabilities that can be used to try to infer emotional states and identity attributes. These capabilities, if misused, can subject people to stereotyping, discrimination or unfair denial of services.
+
+
+## Reliability and safety
+
+AI systems should perform reliably and safely. For example, consider an AI-based software system for an autonomous vehicle; or a machine learning model that diagnoses patient symptoms and recommends prescriptions. Unreliability in these kinds of systems can result in substantial risk to human life.
+
+AI-based software application development must be subjected to rigorous testing and deployment management processes to ensure that they work as expected before release.
+
+## Privacy and security
+
+AI systems should be secure and respect privacy. The machine learning models on which AI systems are based rely on large volumes of data, which may contain personal details that must be kept private. Even after the models are trained and the system is in production, privacy and security need to be considered. As the system uses new data to make predictions or take action, both the data and decisions made from the data may be subject to privacy or security concerns.
+
+## Inclusiveness
+
+AI systems should empower everyone and engage people. AI should bring benefits to all parts of society, regardless of physical ability, gender, sexual orientation, ethnicity, or other factors.
+
+
+## Transparency
+
+AI systems should be understandable. Users should be made fully aware of the purpose of the system, how it works, and what limitations may be expected.
+
+## Accountability
+
+People should be accountable for AI systems. Designers and developers of AI-based solutions should work within a framework of governance and organizational principles that ensure the solution meets ethical and legal standards that are clearly defined.
+
+
+The principles of responsible AI can help you understand some of the challenges facing developers as they try to create ethical AI solutions.
+
+## Further resources
+
+For more resources to help you put the responsible AI principles into practice, see [https://www.microsoft.com/ai/responsible-ai-resources](https://www.microsoft.com/ai/responsible-ai-resources).
+
+To see these policies in action you can read about [Microsoft’s framework for building AI systems responsibly](https://blogs.microsoft.com/on-the-issues/2022/06/21/microsofts-framework-for-building-ai-systems-responsibly/).
+
+
+# Introduction to Azure OpenAI services
+# Introduction
+
+Suppose you want to help your team understand the latest artificial intelligence (AI) innovations in the news. Your team would like to evaluate the opportunities these innovations support and understand what is done to keep AI advancements ethical.
+
+You share with your team that today, stable AI models are regularly put into production and used commercially around the world. For example, Microsoft's existing Azure AI services have been handling the needs of businesses for many years to date. In 2022, OpenAI, an AI research company, created a chatbot known as ChatGPT and an image generation application known as DALL-E. These technologies were built with AI models which can take natural language input from a user and return a machine-created human-like response.
+
+You share with your team that Azure OpenAI Service enables users to build enterprise-grade solutions with OpenAI models. With Azure OpenAI, users can summarize text, get code suggestions, generate images for a web site, and much more. This module dives into these capabilities.
+
+## Capabilities of OpenAI AI models
+
+There are several categories of capabilities found in OpenAI AI models, three of these include:
+
+|Capability|Examples|
+|---|---|
+|_Generating natural language_|Such as: summarizing complex text for different reading levels, suggesting alternative wording for sentences, _and much more_|
+|_Generating code_|Such as: translating code from one programming language into another, identifying and troubleshooting bugs in code, _and much more_|
+|_Generating images_|Such as: generating images for publications from text descriptions _and much more_|
+
+# What is generative AI
+
+OpenAI makes its AI models available to developers to build powerful software applications, such as ChatGPT. There are tons of [other examples of OpenAI](https://platform.openai.com/examples?azure-portal=true) applications on the OpenAI site, ranging from practical, such as generating text from code, to purely entertaining, such as making up scary stories.
+
+Let's identify where OpenAI models fit into the AI landscape.
+
+- **Artificial Intelligence** imitates human behavior by relying on machines to learn and execute tasks without explicit directions on what to output.
+- **Machine learning** algorithms take in data like weather conditions and fit models to the data, to make predictions like how much money a store might make in a given day.
+- **Deep learning** models use layers of algorithms in the form of artificial neural networks to return results for more complex use cases. Many Azure AI services are built on deep learning models. You can check out this article to learn more about the [difference between machine learning and deep learning.](https://learn.microsoft.com/en-us/azure/machine-learning/concept-deep-learning-vs-machine-learning?azure-portal=true)
+- **Generative AI** models can produce new content based on what is described in the input. The OpenAI models are a collection of generative AI models that can produce language, code, and images.
+
+Next you'll learn how Azure OpenAI gives users the ability to combine Azure's enterprise-grade solutions with many of OpenAI's same generative AI models.
+
+# Describe Azure OpenAI
+
+Microsoft has partnered with OpenAI to deliver on three main goals:
+
+- To utilize Azure's infrastructure, including security, compliance, and regional availability, to help users build enterprise-grade applications.
+- To deploy OpenAI AI model capabilities across Microsoft products, including and beyond Azure AI products.
+- To use Azure to power all of OpenAI's workloads.
+
+## Introduction to Azure OpenAI Service
+
+Azure OpenAI Service is a result of the partnership between Microsoft and OpenAI. The service combines Azure's enterprise-grade capabilities with OpenAI's generative AI model capabilities.
+
+Azure OpenAI is available for Azure users and consists of four components:
+
+- Pre-trained generative AI models
+- Customization capabilities; the ability to fine-tune AI models with your own data
+- Built-in tools to detect and mitigate harmful use cases so users can implement AI responsibly
+- Enterprise-grade security with role-based access control (RBAC) and private networks
+
+Using Azure OpenAI allows you to transition between your work with Azure services and OpenAI, while utilizing Azure's private networking, regional availability, and responsible AI content filtering.
+
+### Understand Azure OpenAI workloads
+
+Azure OpenAI supports many common AI workloads and solves for some new ones.
+
+Common AI workloads include machine learning, computer vision, natural language processing, conversational AI, anomaly detection, and knowledge mining.
+
+Other AI workloads Azure OpenAI supports can be categorized by tasks they support:
+
+- **Generating Natural Language**
+    - _Text completion_: generate and edit text
+    - _Embeddings_: search, classify, and compare text
+- **Generating Code**: generate, edit, and explain code
+- **Generating Images**: generate and edit images
+
+### Azure OpenAI's relationship to Azure AI services
+
+![Diagram showing Microsoft AI portfolio and how they relate.](https://learn.microsoft.com/en-us/training/wwl-data-ai/explore-azure-openai/media/microsoft-ai-portfolio-graphic.png)
+
+Azure's AI services are tools for solving AI workloads and can be categorized into three groupings: Azure's Machine Learning platform, Cognitive Services, and Applied AI Services.
+
+Azure AI Services has five pillars: vision, speech, language, decision, and the Azure OpenAI Service. The services you choose to use depend on what you need to accomplish. In particular, there are several overlapping capabilities between the Cognitive Service's Language service and OpenAI's service, such as translation, sentiment analysis, and keyword extraction.
+
+While there's no strict guidance on when to use a particular service, Azure's existing Language service can be used for widely known use-cases that require minimal tuning (the process of optimizing a model's performance). Azure OpenAI's service may be more beneficial for use-cases that require highly customized generative models, or for exploratory research.
+
+Note
+
+Pricing is different for Azure OpenAI and Azure Cognitive Service for Language. [Learn more here](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service?azure-portal=true).
+
+When making business decisions about what type of model to use, it's important to understand how time and compute needs factor into machine learning training. In order to produce an effective machine learning model, the model needs to be trained with a substantial amount of cleaned data. The 'learning' portion of training requires a computer to identify an algorithm that best fits the data. The complexity of the task the model needs to solve for and the desired level of model performance all factor into the time required to run through possible solutions for a best fit algorithm.
+
+# How to use Azure OpenAI
+
+Currently you need to [apply](https://aka.ms/oaiapply?azure-portal=true) for access to Azure OpenAI. Once granted access, you can use the service by creating an Azure OpenAI resource, like you would for other Azure services. Once the resource is created, you can use the service through REST APIs, Python SDK, or the web-based interface in the Azure OpenAI Studio.
+
+Note
+
+To learn more about the basics of APIs, check out this infographic on [how Azure APIs work](https://github.com/MicrosoftLearning/AI-900-AIFundamentals/raw/main/instructions/infographics/ai900_how_auzre_api_works.pdf).
+
+## Azure OpenAI Studio
+
+![Screenshot showing the Azure OpenAI Studio UI get started page with options for exploring the service.](https://learn.microsoft.com/en-us/training/wwl-data-ai/explore-azure-openai/media/azure-openai-studio-start.png)
+
+In the [Azure OpenAI Studio](https://oai.azure.com/portal?azure-portal=true), you can build AI models and deploy them for public consumption in software applications. Azure OpenAI's capabilities are made possible by specific generative AI models. Different models are optimized for different tasks; some models excel at summarization and providing general unstructured responses, and others are built to generate code or unique images from text input.
+
+These Azure OpenAI models include:
+
+- **GPT-4** models that represent the latest generative models for natural language and code.
+- **GPT-3.5** models that can generate natural language and code responses based on prompts.
+- **Embeddings** models that convert text to numeric vectors for analysis - for example comparing sources of text for similarity.
+- **DALL-E** models that generate images based on natural language descriptions.
+
+Azure OpenAI's AI models can all be trained and customized with fine-tuning. We won't go into custom models here, but you can learn more on the [fine-tuning your model](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/how-to/fine-tuning?pivots=programming-language-studio?azure-portal=true) Azure documentation.
+
+Important
+
+Generative AI models _always_ have a _probability_ of reflecting true values. Higher performing models, such as models that have been fine-tuned for specific tasks, do a better job of returning responses that reflect true values. It is important to review the output of generative AI models.
+
+#### Playgrounds
+
+In the Azure OpenAI Studio, you can experiment with OpenAI models in playgrounds. In the _Completions_ playground, you can type in prompts, configure parameters, and see responses without having to code.
+
+![Screenshot of the Azure OpenAI Studio Completions playground where it is possible to test some capabilities of the service without code.](https://learn.microsoft.com/en-us/training/wwl-data-ai/explore-azure-openai/media/azure-openai-completions-playground.png)
+
+In the _Chat_ playground, you can use the assistant setup to instruct the model about how it should behave. The assistant will try to mimic the responses you include in tone, rules, and format you've defined in your system message.
+
+![Screenshot of the Azure OpenAI Studio Chat playground where it is possible to test some capabilities of the service without code.](https://learn.microsoft.com/en-us/training/wwl-data-ai/explore-azure-openai/media/azure-openai-chat-playground.png)
+
+# Understand OpenAI's natural language capabilities
+
+Azure OpenAI's natural language models are able to take in natural language and generate responses.
+
+Natural language learning models are trained on words or chunks of characters known as _tokens_. For example, the word "hamburger" gets broken up into the tokens `ham`, `bur`, and `ger`, while a short and common word like "pear" is a single token. These tokens are mapped into vectors for a machine learning model to use for training. When a trained natural language model takes in a user's input, it also breaks down the input into tokens.
+
+## Understanding GPT models for natural language generation
+
+Generative pre-trained transformer (GPT) models are excellent at both understanding and creating natural language. If you've seen recent news around AI answering questions or writing a paragraph based on a prompt, it likely could have been generated by a GPT model such as GPT-35-Turbo or GPT-4. To use GPT-4 models in Azure OpenAI, you must [apply for access](https://aka.ms/oai/get-gpt4)).
+
+#### What does a response from a GPT model look like?
+
+A key aspect of OpenAI's generative AI is that it takes an input, or **prompt**, to return a natural language, visual, or code response. GPT tries to infer, or guess, the context of the user's question based on the prompt.
+
+GPT models are great at completing several natural language tasks, some of which include:
+
+|Task|Prompt|
+|---|---|
+|Summarizing text|"Summarize this text into a short blurb"|
+|Classifying text|"What genre of book is this?"|
+|Generating names or phrases|"Write a tagline for my flower company"|
+|Translation|"Translate 'How are you' to French"|
+|Answering questions|"What does Azure OpenAI do?"|
+|Suggesting content|"Give me the five best weddings songs"|
+
+For example, given a prompt where the user types in text asking for a cooking recipe:
+
+```
+Write a recipe based on these ingredients and instructions:
+
+Fruit Pie
+
+Ingredients:
+Strawberries
+Blueberries
+Flour
+Eggs
+Milk
+```
+
+Here's an example of the OpenAI API generated response:
+
+```
+Instructions:
+
+1. Preheat your oven to 350 degrees Fahrenheit.
+
+2. In a medium bowl, mix together 1 cup of flour and 1 egg until it forms a dough.
+
+3. Grease a 9-inch pie dish with butter or non-stick cooking spray.
+
+4. Roll out the dough and place it in the pie dish.
+
+5. In a separate bowl, mix together 1 cup of strawberries, 1 cup of blueberries, and 1 cup of milk.
+
+6. Pour the fruit mixture into the pie dish.
+
+7. Bake
+```
+
+Delicious - maybe! It's important to understand that the generated responses are best guesses from a machine. In this case, the generated text may be useful for cooking something that tastes good in real life, or not.
+
+## How models are applied to new use cases
+
+You may have tried out ChatGPT's predictive capabilities in a chat portal, where you can type prompts and receive automated responses. The portal consists of the front-end user interface (UI) users see, and a back-end that includes a generative AI model. The combination of the front and back end can be described as a chatbot. The model provided on the back end is what is available as a building block with both the OpenAI API and Azure OpenAI API. You can utilize ChatGPT's capabilities on Azure OpenAI via the GPT-35-turbo model. When you see generative AI capabilities in other applications, developers have taken the building blocks, customized them to a use case, and built them into the back end of new front-end user interfaces.
+
+# Understand OpenAI code generation capabilities
+
+- 6 minutes
+
+GPT models are able to take natural language or code snippets and translate them into code. The OpenAI GPT models are proficient in over a dozen languages, such as C#, JavaScript, Perl, PHP, and is most capable in Python.
+
+GPT models have been trained on both natural language and billions of lines of code from public repositories. The models are able to generate code from natural language instructions such as code comments, and can suggest ways to complete code functions.
+
+For example, given the prompt "Write a for loop counting from 1 to 10 in Python," the following answer is provided:
+
+```
+for i in range(1,11):
+    print(i)
+```
+
+GPT models can help developers code faster, understand new coding languages, and focus on solving bigger problems in their application. Developers can break down their goal into simpler tasks and use GPT to help build those out tasks using known patterns.
+
+## Examples of code generation
+
+Part of the training data for GPT-3 included programming languages, so it's no surprise that GPT models can answer programming questions if asked. What's unique about the Codex model family is that it's more capable across more languages than GPT models.
+
+Code generation goes beyond just writing code from natural language prompts. Given the following code, it can generate unit tests:
+
+```
+# Python 3
+def mult_numbers(a, b):
+  return a * b
+
+# Unit test
+def
+```
+
+GPT builds out unit tests for our function:
+
+```
+# Python 3
+def mult_numbers(a, b):
+  return a * b
+
+# Unit test
+def test_mult_numbers():
+  assert mult_numbers(3, 4) == 12
+  assert mult_numbers(0, 10) == 0
+  assert mult_numbers(4, 0) == 0
+
+# Unit test
+def test_mult_numbers_negative():
+  assert mult_numbers(-1, 10) == -10
+  assert mult_numbers(10, -1) == -10
+```
+
+GPT can also summarize functions that are already written, explain SQL queries or tables, and convert a function from one programming language into another.
+
+When interacting with GPT models, you can specify libraries or language specific tags to make it clear to Codex what we want. For example, we can provide this prompt formatted as an HTML comment: `<!-- build a page titled "Let's Learn about AI" -->`, and get this as a result:
+
+```
+<html>
+<head>
+<title>Let's Learn about AI</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+<div class="wrapper">
+<div class="header">
+<h1>Let's Learn about AI</h1>
+</div>
+<div class="nav">
+<ul>
+<li><a href="index.php">Home</a></li>
+<li><a href="about.php">About</a></li>
+<li><a href="resources.php">Resources</a></li>
+<li><a href="contact.php">Contact</a></li>
+</ul>
+</div>
+<div class="content">
+<h2>Contact</h2>
+<p>
+<!-- build a form to contact the site owner -->
+<form action="contact.php" method="post">
+<label for="name">Name:</label>
+<input type="text" name="name" id="name" required>
+<label for="email">Email:</label>
+<input type="email" name="email" id="email" required>
+<label for="subject">Subject:</label>
+<input type="text" name="subject" id="subject" required>
+<label for="message">Message:</label>
+<textarea name="message" id="message" required></textarea>
+<input type="submit" value="Send">
+</form>
+</p>
+</div>
+<div class="footer">
+<p>Let's Learn about AI</p>
+</div>
+</div>
+</body>
+</html>
+```
+
+## GitHub Copilot
+
+OpenAI partnered with GitHub to create GitHub Copilot, which they call an AI pair programmer. GitHub Copilot integrates the power of OpenAI Codex into a plugin for developer environments like Visual Studio Code.
+
+Once the plugin is installed and enabled, you can start writing your code, and GitHub Copilot starts automatically suggesting the remainder of the function based on code comments or the function name. For example, we have only a function name in the file, and the gray text is automatically suggested to complete it.
+
+![Screenshot of GitHub Copilot suggesting completion of function.](https://learn.microsoft.com/en-us/training/wwl-data-ai/explore-azure-openai/media/github-copilot-newyear-function.png)
+
+GitHub Copilot offers multiple suggestions for code completion, which you can tab through using keyboard shortcuts. When given informative code comments, it can even suggest a function name along with the complete function code.
+
+![Animated screenshot of GitHub Copilot suggesting completion of function based on code comments.](https://learn.microsoft.com/en-us/training/wwl-data-ai/explore-azure-openai/media/github-copilot.gif)
+
+
+
+# Understand OpenAI's image generation capabilities
+
+- 5 minutes
+
+Image generation models can take a prompt, a base image, or both, and create something new. These generative AI models can create both realistic and artistic images, change the layout or style of an image, and create variations on a provided image.
+
+## DALL-E
+
+In addition to natural language capabilities, generative AI models can edit and create images. The model that works with images is called DALL-E. Much like GPT models, subsequent versions of DALL-E are appended onto the name, such as DALL-E 2. Image capabilities generally fall into the three categories of image creation, editing an image, and creating variations of an image.
+
+## Image generation
+
+Original images can be generated by providing a text prompt of what you would like the image to be of. The more detailed the prompt, the more likely the model will provide a desired result.
+
+With DALL-E, you can even request an image in a particular style, such as "a dog in the style of Vincent van Gogh". Styles can be used for edits and variations as well.
+
+For example, given the prompt "an elephant standing with a burger on top, style digital art", the model generates digital art images depicting exactly what is asked for.
+
+![Four AI generated art depictions of an elephant with a burger on top of it.](https://learn.microsoft.com/en-us/training/wwl-data-ai/explore-azure-openai/media/dall-e-elephant-burger.png)
+
+When asked for something more generic like "a pink fox", the images generated are more varied and simpler while still fulfilling what is asked for.
+
+![Four AI generated art depictions of different pink foxes.](https://learn.microsoft.com/en-us/training/wwl-data-ai/explore-azure-openai/media/dall-e-pink-fox.png)
+
+However when we make the prompt more specific, such as "a pink fox running through a field, in the style of Monet", the model creates much more similar detailed images.
+
+![Four AI generated art depictions of a pink fox in the style of Monet.](https://learn.microsoft.com/en-us/training/wwl-data-ai/explore-azure-openai/media/dall-e-pink-fox-monet.png)
+
+## Editing an image
+
+When provided an image, DALL-E can edit the image as requested by changing its style, adding or removing items, or generating new content to add. Edits are made by uploading the original image and specifying a transparent mask that indicates what area of the image to edit. Along with the image and mask, a prompt indicating what is to be edited instructs the model to then generate the appropriate content to fill the area.
+
+When given one of the above images of a pink fox, a mask covering the fox, and the prompt of "blue gorilla reading a book in a field", the model creates edits of the image based on the provided input.
+
+![Four AI generated art depictions of a blue gorilla in a field.](https://learn.microsoft.com/en-us/training/wwl-data-ai/explore-azure-openai/media/blue-gorilla-edit.png)
+
+## Image variations
+
+Image variations can be created by providing an image and specifying how many variations of the image you would like. The general content of the image will stay the same, but aspects will be adjusted such as where subjects are located or looking, background scene, and colors may change.
+
+For example, if I upload one of the images of the elephant wearing a burger as a hat, I get variations of the same subject.
+
+![Four AI generated art variations of an elephant with a burger on its head.](https://learn.microsoft.com/en-us/training/wwl-data-ai/explore-azure-openai/media/dall-e-elephant-variations.png)
+
+Note
+
+Access to DALL-E is currently granted on an invite basis only.
+
+# Describe Azure OpenAI's access and responsible AI policies
+
+- 3 minutes
+
+It's important to consider the ethical implications of working with AI systems. Azure OpenAI provides powerful natural language models capable of completing various tasks and operating in several different use cases, each with their own considerations for safe and fair use. Teams or individuals tasked with developing and deploying AI systems should work to identify, measure, and mitigate harm.
+
+Usage of Azure OpenAI should follow the six Microsoft [AI principles](https://learn.microsoft.com/en-us/azure/machine-learning/concept-responsible-ai?azure-portal=true):
+
+- **Fairness**: AI systems shouldn't make decisions that discriminate against or support bias of a group or individual.
+- **Reliability and Safety**: AI systems should respond safely to new situations and potential manipulation.
+- **Privacy and Security**: AI systems should be secure and respect data privacy.
+- **Inclusiveness**: AI systems should empower everyone and engage people.
+- **Accountability**: People must be accountable for how AI systems operate.
+- **Transparency**: AI systems should have explanations so users can understand how they're built and used.
+
+Responsible AI principles guide [Microsoft's Transparency Notes on Azure OpenAI](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/transparency-note?azure-portal=true), as well as explanations of other products. Transparency Notes are intended to help you understand how Microsoft's AI technology works, the choices system owners can make that influence system performance and behavior, and the importance of thinking about the whole system, including the technology, the people, and the environment.
+
+If you haven't completed the [Get started with AI on Azure](https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals?azure-portal=true) module, it's worth reviewing its unit on [responsible AI](https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals/8-understand-responsible-ai?azure-portal=true).
+
+## Limited access to Azure OpenAI
+
+As part of Microsoft's commitment to using AI responsibly, access to Azure OpenAI is currently limited. Customers that wish to use Azure OpenAI must submit a registration form for both initial experimentation access, and again for approval for use in production.
+
+Additional registration is required for customers who want to modify content filters or modify abuse monitoring settings.
+
+To apply for access and learn more about the limited access policy, see the [Azure OpenAI limited access](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/limited-access?azure-portal=true) documentation.
+
+# Anomaly detector
+# What is Anomaly Detector?
+
+Anomalies are values that are outside the expected values or range of values.
+
+![Line graph depicting three points that are outside a boundary and identified as anomalies.](https://learn.microsoft.com/en-us/training/wwl-azure/intro-to-anomaly-detector/media/batch-anomaly.png)
+
+In the graphic depicting the time series data, there is a light shaded area that indicates the boundary, or sensitivity range. The solid blue line is used to indicate the measured values. When a measured value is outside of the shaded boundary, an orange dot is used to indicate the value is considered an anomaly. The sensitivity boundary is a parameter that you can specify when calling the service. It allows you to adjust that boundary settings to tweak the results.
+
+Anomaly detection is considered the act of identifying events, or observations, that differ in a significant way from the rest of the data being evaluated. Accurate anomaly detection leads to prompt troubleshooting, which helps to avoid revenue loss and maintain brand reputation.
+
+## Azure's Anomaly Detector service
+
+Anomaly Detector is a part of the Decision Services category within Azure Cognitive Services. It is a cloud-based service that enables you to monitor time series data, and to detect anomalies in that data. It does not require you to know machine learning. You can use the REST API to integrate Anomaly Detector into your applications with relative ease. The service uses the concept of a "one parameter" strategy. The main parameter you need to customize is “Sensitivity”, which is from 1 to 99 to adjust the outcome to fit the scenario. The service can detect anomalies in historical time series data and also in real-time data such as streaming input from IoT devices, sensors, or other streaming input sources.
+
+# How Anomaly Detector works
+
+The Anomaly Detector service identifies anomalies that exist outside the scope of a boundary. The boundary is set using a sensitivity value. By default, the upper and lower boundaries for anomaly detection are calculated using concepts known as **expectedValue**, **upperMargin**, and **lowerMargin**. The upper and lower boundaries are calculated using these three values. If a value exceeds either boundary, it will be identified as an anomaly. You can adjust the boundaries by applying a **marginScale** to the upper and lower margins as demonstrated by the following formula.
+
+_upperBoundary = expectedValue + (100 - marginScale) * upperMargin_
+
+## Data format
+
+The Anomaly Detector service accepts data in JSON format. You can use any numerical data that you have recorded over time. The key aspects of the data being sent includes the granularity, a timestamp, and a value that was recorded for that timestamp. An example of a JSON object that you might send to the API is shown in this code sample. The granularity is set as hourly and is used to represent temperatures in degrees Celsius that were recorded at the timestamps indicated.
+
+```
+{
+    "granularity": "hourly",
+    "series": [
+      {
+        "timestamp": "2021-03-02T01:00:00Z",
+        "value": -10.56
+      },
+      {
+        "timestamp": "2021-03-02T02:00:00Z",
+        "value": -8.30
+      },
+      {
+        "timestamp": "2021-03-02T03:00:00Z",
+        "value": -10.30
+      },
+      {
+        "timestamp": "2021-03-02T04:00:00Z",
+        "value": 5.95
+      },
+    ]
+}
+```
+
+The service will support a maximum of 8640 data points however, sending this many data points in the same JSON object, can result in latency for the response. You can improve the response by breaking your data points into smaller chunks (windows) and sending these in a sequence.
+
+The same JSON object format is used in a streaming scenario. The main difference is that you will send a single value in each request. The streaming detection method will compare the current value being sent and the previous value sent.
+
+## Data consistency recommendations
+
+If your data may have missing values in the sequence, consider the following recommendations.
+
+- Sampling occurs every few minutes and has less than 10% of the expected number of points missing. In this case, the impact should be negligible on the detection results.
+- If you have more than 10% missing, there are options to help "fill" the data set. Consider using a linear interpolation method to fill in the missing values and complete the data set. This will fill gaps with evenly distributed values.
+
+The Anomaly Detector service will provide the best results if your time series data is evenly distributed. If the data is more randomly distributed, you can use an aggregation method to create a more even distribution data set.
+
+# When to use Anomaly Detector
+
+The Anomaly Detector service supports batch processing of time series data and last-point anomaly detection for real-time data.
+
+## Batch detection
+
+Batch detection involves applying the algorithm to an entire data series at one time. The concept of time series data involves evaluation of a data set as a batch. Use your time series to detect any anomalies that might exist throughout your data. This operation generates a model using your entire time series data, with each point analyzed using the same model.
+
+Batch detection is best used when your data contains:
+
+- Flat trend time series data with occasional spikes or dips
+- Seasonal time series data with occasional anomalies
+    - Seasonality is considered to be a pattern in your data, that occurs at regular intervals. Examples would be hourly, daily, or monthly patterns. Using seasonal data, and specifying a period for that pattern, can help to reduce the latency in detection.
+
+When using the batch detection mode, Anomaly Detector creates a single statistical model based on the entire data set that you pass to the service. From this model, each data point in the data set is evaluated and anomalies are identified.
+
+#### Batch detection example
+
+Consider a pharmaceutical company that stores medications in storage facilities where the temperature in the facilities needs to remain within a specific range. To evaluate whether the medication remained stored in a safe temperature range in the past three months we need to know:
+
+- the maximum allowable temperature
+- the minimum allowable temperature
+- the acceptable duration of time for temperatures to be outside the safe range
+
+If you are interested in evaluating compliance over historical readings, you can extract the required time series data, package it into a JSON object, and send it to the Anomaly Detector service for evaluation. You will then have a historical view of the temperature readings over time.
+
+## Real-time detection
+
+Real-time detection uses streaming data by comparing previously seen data points to the last data point to determine if your latest one is an anomaly. This operation generates a model using the data points you send, and determines if the target (current) point is an anomaly. By calling the service with each new data point you generate, you can monitor your data as it's created.
+
+#### Real-time detection example
+
+Consider a scenario in the carbonated beverage industry where real-time anomaly detection may be useful. The carbon dioxide added to soft drinks during the bottling or canning process needs to stay in a specific temperature range.
+
+Bottling systems use a device known as a carbo-cooler to achieve the refrigeration of the product for this process. If the temperature goes too low, the product will freeze in the carbo-cooler. If the temperature is too warm, the carbon dioxide will not adhere properly. Either situation results in a product batch that cannot be sold to customers.
+
+This carbonated beverage scenario is an example of where you could use streaming detection for real-time decision making. It could be tied into an application that controls the bottling line equipment. You may use it to feed displays that depict the system temperatures for the quality control station. A service technician may also use it to identify equipment failure potential and servicing needs.
+
+You can use the Anomaly Detector service to create a monitoring application configured with the above criteria to perform real-time temperature monitoring. You can perform anomaly detection using both streaming and batch detection techniques. Streaming detection is most useful for monitoring critical storage requirements that must be acted on immediately. Sensors will monitor the temperature inside the compartment and send these readings to your application or an event hub on Azure. Anomaly Detector will evaluate the streaming data points and determine if a point is an anomaly.
+
+# Summary
+
+
+The Anomaly Detector detects anomalies automatically in time series data. It supports two basic detection models. One is for detecting a batch of data with a model trained by the time series sent to the service. The other is used for detecting the last point with the model trained by points before.
+
+Packaging your time series data into a JSON object and passing it to the API, anomalies can be detected in the time series data. Using the returned results can help you identify issues with industrial processes or recorded events. Batch series data is best used to evaluate recorded events that represent seasonal patterns and don't require immediate action. Streaming data points into the API can offer real-time awareness of anomalies that may require immediate action.
+
+The API can be integrated into your applications by using REST calls or by incorporating the appropriate SDK into your code. Using the Anomaly Detector service does not require you to devise, or to be knowledgeable in, machine learning algorithms.
+
+## Learn more
+
+To learn more about Anomaly Detector, consider reviewing the [Identify abnormal time-series data with Anomaly Detector](https://learn.microsoft.com/en-us/training/modules/identify-abnormal-time-series-data-anomaly-detector/) module on Microsoft Learn.
+
+
+# Knowledge mining 
+# Introduction
+
+Searching for information online has never been easier. However, it's still a challenge to find information from documents that aren't in a search index. For example, every day, people deal with unstructured, typed, image-based, or hand-written documents. Often, people must manually read through these documents to extract and record their insights in order to persist the found data. Now we have solutions that can automate information extraction.
+
+Knowledge mining is the term used to describe solutions that involve extracting information from large volumes of often unstructured data. One of these knowledge mining solutions is Azure Cognitive Search, a cloud search service that has tools for building user-managed indexes. The indexes can be used for internal only use, or to enable searchable content on public-facing internet assets.
+
+Importantly, Azure Cognitive Search can utilize the built-in AI capabilities of Azure Cognitive Services such as image processing, content extraction, and natural language processing to perform knowledge mining of documents. The product's AI capabilities makes it possible to index previously unsearchable documents and to extract and surface insights from large amounts of data quickly.
+
+## Learning objectives
+
+In this module, you will:
+
+- Understand how Azure Cognitive Search uses cognitive skills
+- Learn how indexers automate data ingestion steps, including JSON serialization
+- Describe the purpose of a knowledge store
+- Build and query a search index
+
+# What is Azure Cognitive Search?
+
+- 3 minutes
+
+Azure Cognitive Search provides the infrastructure and tools to create search solutions that extract data from various structured, semi-structured, and non-structured documents.
+
+![Infographic of Azure Search.](https://learn.microsoft.com/en-us/training/wwl-azure/intro-to-azure-search/media/2-what-is-azure-search.png)
+
+Azure Cognitive Search results contain only your data, which can include text inferred or extracted from images, or new entities and key phrases detection through text analytics. It's a Platform as a Service (PaaS) solution. Microsoft manages the infrastructure and availability, allowing your organization to benefit without the need to purchase or manage dedicated hardware resources.
+
+## Azure Cognitive Search features
+
+Azure Cognitive Search exists to complement existing technologies and provides a programmable search engine built on Apache Lucene, an open-source software library. It's a highly available platform offering a 99.9% uptime SLA available for cloud and on-premises assets.
+
+Azure Cognitive Search comes with the following features:
+
+- **Data from any source**: Azure Cognitive Search accepts data from any source provided in JSON format, with auto crawling support for selected data sources in Azure.
+- **Full text search and analysis**: Azure Cognitive Search offers full text search capabilities supporting both simple query and full Lucene query syntax.
+- **AI powered search**: Azure Cognitive Search has Cognitive AI capabilities built in for image and text analysis from raw content.
+- **Multi-lingual**: Azure Cognitive Search offers linguistic analysis for 56 languages to intelligently handle phonetic matching or language-specific linguistics. Natural language processors available in Azure Cognitive Search are also used by Bing and Office.
+- **Geo-enabled**: Azure Cognitive Search supports geo-search filtering based on proximity to a physical location.
+- **Configurable user experience**: Azure Cognitive Search has several features to improve the user experience including autocomplete, autosuggest, pagination, and hit highlighting.
+
+# Identify elements of a search solution
+
+
+![Infographic of indexing process.](https://learn.microsoft.com/en-us/training/wwl-azure/intro-to-azure-search/media/data-indexing-process.png)
+
+A typical Azure Cognitive Search solution starts with a data source that contains the data artifacts you want to search. This could be a hierarchy of folders and files in Azure Storage, or text in a database such as Azure SQL Database or Azure Cosmos DB. The data format that Cognitive Search supports is JSON. Regardless of where your data originates, if you can provide it as a JSON document, the search engine can index it.
+
+If your data resides in supported data source, you can use an indexer to automate data ingestion, including JSON serialization of source data in native formats. An indexer connects to a data source, serializes the data, and passes to the search engine for indexing. Most indexers support change detection, which makes data refresh a simpler exercise.
+
+Besides automating data ingestion, indexers also support AI enrichment. You can attach a skillset that applies a sequence of AI skills to enrich the data, making it more searchable. A comprehensive set of built-in skills, based on Cognitive Services APIs, can help you derive new fields – for example by recognizing entities in text, translating text, evaluating sentiment, or predicting appropriate captions for images. Optionally, enriched content can be sent to a knowledge store, which stores output from an AI enrichment pipeline in tables and blobs in Azure Storage for independent analysis or downstream processing.
+
+Whether you write application code that pushes data to an index - or use an indexer that automates data ingestion and adds AI enrichment - the fields containing your content are persisted in an index, which can be searched by client applications. The fields are used for searching, filtering, and sorting to generate a set of results that can be displayed or otherwise used by the client application.
+
+# Use a skillset to define an enrichment pipeline
+
+AI enrichment refers to embedded image and natural language processing in a pipeline that extracts text and information from content that can't otherwise be indexed for full text search.
+
+AI processing is achieved by adding and combining skills in a skillset. A skillset defines the operations that extract and enrich data to make it searchable. These AI skills can be either built-in skills, such as text translation or Optical Character Recognition (OCR), or custom skills that you provide.
+
+### Built in skills
+
+Built-in skills are based on pre-trained models from Microsoft, which means you can't train the model using your own training data. Skills that call the Cognitive Resources APIs have a dependency on those services and are billed at the Cognitive Services pay-as-you-go price when you attach a resource. Other skills are metered by Azure Cognitive Search, or are utility skills that are available at no charge.
+
+Built-in skills fall into these categories:
+
+**Natural language processing skills**: with these skills, unstructured text is mapped as searchable and filterable fields in an index.
+
+Some examples include:
+
+- Key Phrase Extraction: uses a pre-trained model to detect important phrases based on term placement, linguistic rules, proximity to other terms, and how unusual the term is within the source data.
+    
+- Text Translation Skill: uses a pre-trained model to translate the input text into various languages for normalization or localization use cases.
+    
+
+**Image processing skills**: creates text representations of image content, making it searchable using the query capabilities of Azure Cognitive Search.
+
+Some examples include:
+
+- Image Analysis Skill: uses an image detection algorithm to identify the content of an image and generate a text description.
+    
+- Optical Character Recognition Skill: allows you to extract printed or handwritten text from images, such as photos of street signs and products, as well as from documents—invoices, bills, financial reports, articles, and more.
+
+# Understand indexes
+
+An Azure Cognitive Search index can be thought of as a container of searchable documents. Conceptually you can think of an index as a table and each row in the table represents a document. Tables have columns, and the columns can be thought of as equivalent to the fields in a document. Columns have data types, just as the fields do on the documents.
+
+### Index schema
+
+In Azure Cognitive Search, an index is a persistent collection of JSON documents and other content used to enable search functionality. The documents within an index can be thought of as rows in a table, each document is a single unit of searchable data in the index.
+
+The index includes a definition of the structure of the data in these documents, called its schema. An example of an index schema with AI-extracted fields _keyphrases_ and _imageTags_ is below:
+
+```
+{
+  "name": "index",
+  "fields": [
+    {
+      "name": "content", "type": "Edm.String", "analyzer": "standard.lucene", "fields": []
+    }
+    {
+      "name": "keyphrases", "type": "Collection(Edm.String)", "analyzer": "standard.lucene", "fields": []
+    },
+    {
+      "name": "imageTags", "type": "Collection(Edm.String)", "analyzer": "standard.lucene", "fields": []
+    },
+  ]
+}
+```
+
+### Index attributes
+
+Azure Cognitive Search needs to know how you would like to search and display the fields in the documents. You specify that by assigning attributes, or behaviors, to these fields. For each field in the document, the index stores its name, the data type, and supported behaviors for the field such as, is the field searchable, can the field be sorted?
+
+The most efficient indexes use only the behaviors that are needed. If you forget to set a required behavior on a field when designing, the only way to get that feature is to rebuild the index.
+
+The following image depicts the fields when designing an index in Azure:
+
+![Screenshot showing an example index with different fields.](https://learn.microsoft.com/en-us/training/wwl-azure/intro-to-azure-search/media/2-index-workflows.png)
+
+
+# Use an indexer to build an index
+
+In order to index the documents in Azure Storage, they need to be exported from their original file type to JSON. In order to export data in any format to JSON, and load it into an index, we use an indexer.
+
+To create search documents, you can either generate JSON documents with application code or you can use Azure's indexer to export incoming documents into JSON.
+
+Azure Cognitive Search lets you create and load JSON documents into an index with two approaches:
+
+- **Push method**: JSON data is pushed into a search index via either the REST API or the .NET SDK. Pushing data has the most flexibility as it has no restrictions on the data source type, location, or frequency of execution.
+    
+- **Pull method**: Search service indexers can pull data from popular Azure data sources, and if necessary, export that data into JSON if it isn't already in that format.
+    
+
+### Use the pull method to load data with an indexer
+
+Azure Cognitive Search's indexer is a crawler that extracts searchable text and metadata from an external Azure data source and populates a search index using field-to-field mappings between source data and your index. Using the indexer is sometimes referred to as a 'pull model' approach because the service pulls data in without you having to write any code that adds data to an index. An indexer maps source fields to their matching fields in the index.
+
+### Data import monitoring and verification
+
+The search services overview page has a dashboard that lets you quickly see the health of the search service. On the dashboard, you can see how many documents are in the search service, how many indexes have been used, and how much storage is in use.
+
+When loading new documents into an index, the progress can be monitored by clicking on the index's associated indexer. The document count will grow as documents are loaded into the index. In some instances, the portal page can take a few minutes to display up-to-date document counts. Once the index is ready for querying, you can then use Search explorer to verify the results. An index is ready when the first document is successfully loaded.
+
+Indexers only import new or updated documents, so it is normal to see zero documents indexed.
+
+The Search explorer can perform quick searches to check the contents of an index, and ensure that you are getting expected search results. Having this tool available in the portal enables you to easily check the index by reviewing the results that are returned as JSON documents.
+
+### Making changes to an index
+
+You have to drop and recreate indexes if you need to make changes to field definitions. Adding new fields is supported, with all existing documents having null values. You'll find it faster using a code-based approach to iterate your designs, as working in the portal requires the index to be deleted, recreated, and the schema details to be manually filled out.
+
+An approach to updating an index without affecting your users is to create a new index under a different name. You can use the same indexer and data source. After importing data, you can switch your app to use the new index.
+
+# Create an index in the Azure portal
+
+Before using an indexer to create an index, you'll first need to make your data available in a supported data source. Supported data sources include:
+
+- Cosmos DB (SQL API)
+- Azure SQL (database, managed instance, and SQL Server on an Azure VM)
+- Azure Storage (Blob Storage, Table Storage, ADLS Gen2)
+
+### Using the Azure portal's Import data wizard
+
+Once your data is in an Azure data source, you can begin using Azure Cognitive Search. Contained within the Azure Cognitive Search service in Azure portal is the Import data wizard, which automates processes in the Azure portal to create various objects needed for the search engine. You can see it in action when creating any of the following objects using the Azure portal:
+
+- **Data Source**: Persists connection information to source data, including credentials. A data source object is used exclusively with indexers.
+- **Index**: Physical data structure used for full text search and other queries.
+- **Indexer**: A configuration object specifying a data source, target index, an optional AI skillset, optional schedule, and optional configuration settings for error handling and base-64 encoding.
+- **Skillset**: A complete set of instructions for manipulating, transforming, and shaping content, including analyzing and extracting information from image files. Except for very simple and limited structures, it includes a reference to a Cognitive Services resource that provides enrichment.
+- **Knowledge store**: Stores output from an AI enrichment pipeline in tables and blobs in Azure Storage for independent analysis or downstream processing.
+
+To use Azure Cognitive Search, you'll need an Azure Cognitive Search resource. You can create a resource in the Azure portal. Once the resource is created, you can manage components of your service from the resource _Overview_ page in the portal.
+
+![Image of the overview page of an Azure Cognitive Search resource.](https://learn.microsoft.com/en-us/training/wwl-azure/intro-to-azure-search/media/azure-search-portal.png)
+
+You can build Azure search indexes using the Azure portal or programmatically with the REST API or software development kits (SDKs).
+
+# Query data in an Azure Cognitive Search index
+
+Index and query design are closely linked. After we build the index, we can perform queries. A crucial component to understand is that the schema of the index determines what queries can be answered.
+
+Azure Cognitive Search queries can be submitted as an HTTP or REST API request, with the response coming back as JSON. Queries can specify what fields are searched and returned, how search results are shaped, and how the results should be filtered or sorted. A query that doesn't specify the field to search will execute against all the searchable fields within the index.
+
+Azure Cognitive Search supports two types of syntax: simple and full Lucene. Simple syntax covers all of the common query scenarios, while full Lucene is useful for advanced scenarios.
+
+### Simple query requests
+
+A query request is a list or words (search terms) and query operators (simple or full) of what you would like to see returned in a result set. Let's look what components make up a search query. Consider this simple search example:
+
+```
+coffee (-"busy" + "wifi")
+```
+
+This query is trying to find content about coffee, excluding busy and including wifi.
+
+Breaking the query into components, it's made up of search terms, (`coffee`), plus two verbatim phrases, `"busy"` and `"wifi"`, and operators (`-`, `+`, and `( )`). The search terms can be matched in the search index in any order or location in the content. The two phrases will only match with exactly what is specified, so `wi-fi` would not be a match. Finally, a query can contain a number of operators. In this example, the `-` operator tells the search engine that these phrases should _NOT_ be in the results. The parenthesis group terms together, and set their precedence.
+
+By default, the search engine will match any of the terms in the query. Content containing just `coffee` would be a match. In this example, using `-"busy"` would lead to the search results including all content that doesn't have the exact string "busy" in it.
+
+The simple query syntax in Azure Cognitive Search excludes some of the more complex features of the full Lucene query syntax, and it's the default search syntax for queries.
+
+You can learn more about query syntax in the [documentation](https://learn.microsoft.com/en-us/azure/search/query-odata-filter-orderby-syntax).
+
+# Summary
+
+In this module, you explored the benefits of using Azure Cognitive Search to create a scalable and rich search experience.
+
+## Clean up
+
+When you're working in your own subscription, it's a good idea at the end of a project to identify whether you still need the resources you created. Resources left running can cost you money. You can delete resources individually or delete the resource group to delete the entire set of resources.
+
