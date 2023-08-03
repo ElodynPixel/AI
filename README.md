@@ -446,3 +446,131 @@ You can use Conversational Language Understanding to build a model that predicts
 
 You can find out more about Conversational Language Understanding in the [service documentation](https://learn.microsoft.com/en-us/azure/cognitive-services/language-service/conversational-language-understanding/overview).
 
+# Built a bot with the Language Service and Azure Bot Service
+
+# Introduction
+
+In today's connected world, people use a variety of technologies to communicate. For example:
+
+- Voice calls
+- Messaging services
+- Online chat applications
+- Email
+- Social media platforms
+- Collaborative workplace tools
+
+We've become so used to ubiquitous connectivity, that we expect the organizations we deal with to be easily contactable and immediately responsive through the channels we already use. Additionally, we expect these organizations to engage with us individually, and be able to answer complex questions at a personal level.
+
+## Conversational AI
+
+While many organizations publish support information and answers to frequently asked questions (FAQs) that can be accessed through a web browser or dedicated app, the complexity of the systems and services they offer means that answers to specific questions are hard to find. Often, these organizations find their support personnel being overloaded with requests for help through phone calls, email, text messages, social media, and other channels.
+
+Increasingly, organizations are turning to artificial intelligence (AI) solutions that make use of AI agents, commonly known as _bots_ to provide a first-line of automated support through the full range of channels that we use to communicate. Bots are designed to interact with users in a conversational manner, as shown in this example of a chat interface:
+
+![A chat interface showing user input and responses from a bot](https://learn.microsoft.com/en-us/training/wwl-data-ai/build-faq-chatbot-qna-maker-azure-bot-service/media/bot.png)
+
+Note
+
+The example shown here is a chat interface, such as you might find on a web site; but bots can be designed to work across multiple channels, including email, social media platforms, and even voice calls. Regardless of the channel used, bots typically manage conversation flows using a combination of natural language and constrained option responses that guide the user to a resolution.
+
+Conversations typically take the form of messages exchanged in turns; and one of the most common kinds of conversational exchange is a question followed by an answer. This pattern forms the basis for many user support bots, and can often be based on existing FAQ documentation. To implement this kind of solution, you need:
+
+- A _knowledge base_ of question and answer pairs - usually with some built-in natural language processing model to enable questions that can be phrased in multiple ways to be understood with the same semantic meaning.
+- A _bot service_ that provides an interface to the knowledge base through one or more channels.
+
+# Get started with the Language service and Azure Bot Service
+
+You can easily create a user support bot solution on Microsoft Azure using a combination of two core services:
+
+- **Language service**. The Language service includes a custom question answering feature that enables you to create a knowledge base of question and answer pairs that can be queried using natural language input.
+    
+    Note
+    
+    The question answering capability in the Language service is a newer version of the QnA Maker service - which is still available as a separate service.
+    
+- **Azure Bot service**. This service provides a framework for developing, publishing, and managing bots on Azure.
+
+## Creating a custom question answering knowledge base
+
+The first challenge in creating a user support bot is to use the Language service to create a knowledge base. You can use the _Language Studio_'s custom question answering feature to create, train, publish, and manage knowledge bases.
+
+Note
+
+You can write code to create and manage knowledge bases using the Language service REST API or SDK. However, in most scenarios it is easier to use the Language Studio.
+
+### Provision a Language service Azure resource
+
+To create a knowledge base, you must first provision a **Language service** resource in your Azure subscription.
+
+### Define questions and answers
+
+After provisioning a Language service resource, you can use the Language Studio's custom question answering feature to create a knowledge base that consists of question-and-answer pairs. These questions and answers can be:
+
+- Generated from an existing FAQ document or web page.
+- Entered and edited manually.
+
+In many cases, a knowledge base is created using a combination of all of these techniques; starting with a base dataset of questions and answers from an existing FAQ document and extending the knowledge base with additional manual entries.
+
+Questions in the knowledge base can be assigned _alternative phrasing_ to help consolidate questions with the same meaning. For example, you might include a question like:
+
+> _What is your head office location?_
+
+You can anticipate different ways this question could be asked by adding an alternative phrasing such as:
+
+> _Where is your head office located?_
+
+### Test the knowledge base
+
+After creating a set of question-and-answer pairs, you must save it. This process analyzes your literal questions and answers and applies a built-in natural language processing model to match appropriate answers to questions, even when they are not phrased exactly as specified in your question definitions. Then you can use the built-in test interface in the Language Studio to test your knowledge base by submitting questions and reviewing the answers that are returned.
+
+### Use the knowledge base
+
+When you're satisfied with your knowledge base, deploy it. Then you can use it over its REST interface. To access the knowledge base, client applications require:
+
+- The knowledge base ID
+- The knowledge base endpoint
+- The knowledge base authorization key
+
+## Build a bot with the Azure Bot Service
+
+After you've created and deployed a knowledge base, you can deliver it to users through a bot.
+
+### Create a bot for your knowledge base
+
+You can create a custom bot by using the Microsoft Bot Framework SDK to write code that controls conversation flow and integrates with your knowledge base. However, an easier approach is to use the automatic bot creation functionality, which enables you to create a bot for your deployed knowledge base and publish it as an Azure Bot Service application with just a few clicks.
+
+### Extend and configure the bot
+
+After creating your bot, you can manage it in the Azure portal, where you can:
+
+- Extend the bot's functionality by adding custom code.
+- Test the bot in an interactive test interface.
+- Configure logging, analytics, and integration with other services.
+
+For simple updates, you can edit bot code directly in the Azure portal. However, for more comprehensive customization, you can download the source code and edit it locally; republishing the bot directly to Azure when you're ready.
+
+### Connect channels
+
+When your bot is ready to be delivered to users, you can connect it to multiple _channels_; making it possible for users to interact with it through web chat, email, Microsoft Teams, and other common communication media.
+
+![A chat interface showing user input and responses from a bot](https://learn.microsoft.com/en-us/training/wwl-data-ai/build-faq-chatbot-qna-maker-azure-bot-service/media/bot-solution.png)
+
+Users can submit questions to the bot through any of its channels, and receive an appropriate answer from the knowledge base on which the bot is based.
+
+# Summary
+
+The Language service's custom question answering feature enables you to define and publish a knowledge base of questions and answers with support for natural language querying. When combined with Azure Bot Service, you can use a knowledge base to deliver a bot that responds intelligently to user questions over multiple communication channels.
+
+The ability to create conversational AI solutions with these services makes it possible for AI agents to reduce the support workload for human personnel; enabling organizations to provide user support at global scale.
+
+## Clean-up
+
+It's a good idea at the end of a project to identify whether you still need the resources you created. Resources left running can cost you money.
+
+If you are continuing on to other modules in this learning path you can keep your resources for use in other labs.
+
+If you have finished learning, you can delete the resource group or individual resources from your Azure subscription:
+
+1. In the [Azure portal](https://portal.azure.com/), in the **Resource groups** page, open the resource group you specified when creating your resource.
+    
+2. Click **Delete resource group**, type the resource group name to confirm you want to delete it, and select **Delete**. You can also choose to delete individual resources by selecting the resource(s), clicking on the three dots to see more options, and clicking **Delete**.
