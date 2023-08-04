@@ -1,221 +1,733 @@
-# CP 2 Principles of Machine learning
+# Use Automated ML in Azure ML
 # Introduction
 
-## Getting started with the AI-900 ML exam
-Clustering
-Regression
-Classification
+_Machine Learning_ is the foundation for most artificial intelligence solutions. Creating an intelligent solution often begins with the use of machine learning to train predictive models using historic data that you have collected.
 
-## Overview of the Azure fundamentals certification
+_Azure Machine Learning_ is a cloud service that you can use to train and manage machine learning models.
 
-### Levels of certification
-- Fundamentals - entry level
-- Associate -2-5y experience
-- Expert - Highest level of technical capability
+In this module, you'll learn to:
 
-### The AI-900 exam
-- Entry level not focused on coding or implementation
-- AI Focus
-	- Azure cognitive services
-	- Azure bot service
-	- Azure ML
-- Non-AI focus
-	- Microsoft responsible AI principles
+- Identify the machine learning process.
+- Understand Azure Machine Learning capabilities.
+- Use automated machine learning in Azure Machine Learning studio to train and deploy a predictive model.
 
-### About this course
-- Low focus on coding
-- Cover workload differences and ML process
-- More hands-on and emphasis on model creation
-- Some Azure, database and development experience beneficial, but not required
-*************************************************************
-# Principles of ML
+To complete this module, you'll need a Microsoft Azure subscription. If you don't already have one, you can sign up for a free trial at [https://azure.microsoft.com](https://azure.microsoft.com/?azure-portal=true).
 
-## What is ML?
-- Artificial intelligence
-	- Reasoning: Draw conclusions from imperfect data
-	- Understanding: Interpret meaning on data, such as images, video, or audio
-	- Interacting: Communicate in more natural ways such as voice/ text
-- ML 
-	- is a subset of AI that trains computers to make predictions
-	- Several algorithm for specific uses
-		- Linear/logistic regression
-		- Support-vector machines
-		- Decision trees
-	- 
+# What is machine learning?
 
-### Five questions ML can answer-NB
-- Classification (A/B)
-	- >2= multiclass classification
-	- Options
-- Regression (How much/many)
-		- Predict value
-		- NUmbers
-- Anomaly detection (Is this weird?)
-	- Outliers
-- Clustering (How is this organized)
-	- Grouping
-- Reinforcement (What's next?)
+Machine learning is a technique that uses mathematics and statistics to create a model that can predict unknown values.
 
-## Practice: Types of ML
+![Illustration of Adventure Works cycle rental company on a cloudy summer day.](https://learn.microsoft.com/en-us/training/wwl-data-ai/use-automated-machine-learning/media/adventure-works.png)
+
+For example, suppose _Adventure Works Cycles_ is a business that rents cycles in a city. The business could use historic data to train a model that predicts daily rental demand in order to make sure sufficient staff and cycles are available.
+
+To do this, Adventure Works could create a machine learning model that takes information about a specific day (the day of week, the anticipated weather conditions, and so on) as an input, and predicts the expected number of rentals as an output.
+
+Mathematically, you can think of machine learning as a way of defining a function (let's call it _**f**_) that operates on one or more _features_ of something (which we'll call _**x**_) to calculate a predicted _label_ (_**y**_) - like this:
+
+> _**f(x) = y**_
+
+In this bicycle rental example, the details about a given day (day of the week, weather, and so on) are the _features_ (_**x**_), the number of rentals for that day is the _label_ (_**y**_), and the function (_**f**_) that calculates the number of rentals based on the information about the day is encapsulated in a machine learning model.
+
+The specific operation that the _**f**_ function performs on _x_ to calculate _y_ depends on a number of factors, including the type of model you're trying to create and the specific algorithm used to train the model. Additionally in most cases, the data used to train the machine learning model requires some pre-processing before model training can be performed.
+
+## Types of machine learning
+
+There are two general approaches to machine learning, supervised and unsupervised machine learning. In both approaches, you train a model to make predictions.
+
+The **supervised machine learning** approach requires you to start with a dataset _with_ known label values. Two types of supervised machine learning tasks include regression and classification.
+
+- **Regression**: used to predict a continuous value; like a price, a sales total, or some other measure.
+- **Classification**: used to determine a class label; an example of a binary class label is whether a patient has diabetes or not; an example of multi-class labels is classifying text as positive, negative, or neutral.
+
+The **unsupervised machine learning** approach starts with a dataset _without_ known label values. One type of unsupervised machine learning task is clustering.
+
+- **Clustering**: used to determine labels by grouping similar information into label groups; like grouping measurements from birds into species.
+
+# What is Azure Machine Learning studio?
+
+Training and deploying an effective machine learning model involves a lot of work, much of it time-consuming and resource-intensive. Azure Machine Learning is a cloud-based service that helps simplify some of the tasks it takes to prepare data, train a model, and deploy a predictive service.
+
+Most importantly, Azure Machine Learning helps data scientists increase their efficiency by automating many of the time-consuming tasks associated with training models; and it enables them to use cloud-based compute resources that scale effectively to handle large volumes of data while incurring costs only when actually used.
+
+## Azure Machine Learning workspace
+
+To use Azure Machine Learning, you first create a _workspace_ resource in your Azure subscription. You can then use this workspace to manage data, compute resources, code, models, and other artifacts related to your machine learning workloads.
+
+After you have created an Azure Machine Learning workspace, you can develop solutions with the Azure machine learning service either with developer tools or the Azure Machine Learning studio web portal.
+
+## Azure Machine Learning studio
+
+Azure Machine Learning studio is a web portal for machine learning solutions in Azure. It includes a wide range of features and capabilities that help data scientists prepare data, train models, publish predictive services, and monitor their usage. To begin using the web portal, you need to assign the workspace you created in the Azure portal to Azure Machine Learning studio
+
+![Screenshot of the Azure Machine Learning studio interface.](https://learn.microsoft.com/en-us/training/wwl-data-ai/use-automated-machine-learning/media/studio-home.png)
+
+## Azure Machine Learning compute
+
+At its core, Azure Machine Learning is a service for training and managing machine learning models, for which you need compute on which to run the training process.
+
+Compute targets are cloud-based resources on which you can run model training and data exploration processes.
+
+In [Azure Machine Learning studio](https://ml.azure.com/?azure-portal=true), you can manage the compute targets for your data science activities. There are four kinds of compute resource you can create:
+
+- **Compute Instances**: Development workstations that data scientists can use to work with data and models.
+- **Compute Clusters**: Scalable clusters of virtual machines for on-demand processing of experiment code.
+- **Inference Clusters**: Deployment targets for predictive services that use your trained models.
+- **Attached Compute**: Links to existing Azure compute resources, such as Virtual Machines or Azure Databricks clusters.
+
+# What is Azure Automated Machine Learning?
+
+Azure Machine Learning includes an _automated machine learning_ capability that automatically tries multiple pre-processing techniques and model-training algorithms in parallel. These automated capabilities use the power of cloud compute to find the best performing supervised machine learning model for your data.
+
+Automated machine learning allows you to train models without extensive data science or programming knowledge. For people with a data science and programming background, it provides a way to save time and resources by automating algorithm selection and hyperparameter tuning.
+
+You can create an automated machine learning job in Azure Machine Learning studio.
+
+![Screenshot of the automated machine learning feature in Azure Machine Learning studio.](https://learn.microsoft.com/en-us/training/wwl-data-ai/use-automated-machine-learning/media/automated-machine-learning-portal.png)
+
+In Azure Machine Learning, operations that you run are called _jobs_. You can configure multiple settings for your job before starting an automated machine learning run. The run configuration provides the information needed to specify your training script, compute target, and Azure ML environment in your run configuration and run a training job.
+
+[![Screenshot of the configuration steps need to create an automated machine learning run.](https://learn.microsoft.com/en-us/training/wwl-data-ai/use-automated-machine-learning/media/start-job-machine-learning-studio.png)](https://learn.microsoft.com/en-us/training/wwl-data-ai/use-automated-machine-learning/media/start-job-machine-learning-studio.png#lightbox)
+# Understand the AutoML process
+
+You can think of the steps in a machine learning process as:
+
+1. **Prepare data**: Identify the features and label in a dataset. Pre-process, or clean and transform, the data as needed.
+2. **Train model**: Split the data into two groups, a training and a validation set. Train a machine learning model using the training data set. Test the machine learning model for performance using the validation data set.
+3. **Evaluate performance**: Compare how close the model's predictions are to the known labels.
+4. **Deploy a predictive service**: After you train a machine learning model, you can deploy the model as an application on a server or device so that others can use it.
+
+These are the same steps in the automated machine learning process with Azure Machine Learning.
+
+## Prepare data
+
+Machine learning models must be trained with existing data. Data scientists expend a lot of effort exploring and pre-processing data, and trying various types of model-training algorithms to produce accurate models, which is time consuming, and often makes inefficient use of expensive compute hardware.
+
+In Azure Machine Learning, data for model training and other operations is usually encapsulated in an object called a _data asset_. You can create your own data asset in Azure Machine Learning studio.
+
+![Screenshot of selecting data for an automated machine learning job.](https://learn.microsoft.com/en-us/training/wwl-data-ai/use-automated-machine-learning/media/auto-machine-learning-select-data.png)
+
+## Train model
+
+The automated machine learning capability in Azure Machine Learning supports _supervised_ machine learning models - in other words, models for which the training data includes known label values. You can use automated machine learning to train models for:
+
+- **Classification** (predicting categories or _classes_)
+- **Regression** (predicting numeric values)
+- **Time series forecasting** (predicting numeric values at a future point in time)
+
+In Automated Machine Learning you can select from several types of tasks: ![Screenshot of portal choices in automated machine learning.](https://learn.microsoft.com/en-us/training/wwl-data-ai/use-automated-machine-learning/media/choose-task-settings.png)
+
+In Automated Machine Learning, you can select configurations for the primary metric, type of model used for training, exit criteria, and concurrency limits.
+
+![Screenshot of portal configurations in automated machine learning.](https://learn.microsoft.com/en-us/training/wwl-data-ai/use-automated-machine-learning/media/machine-learning-run-configurations.png)
+
+Importantly, AutoML will split data into a training set and a validation set. You can configure the details in the settings before you run the job.
+
+![Screenshot of training and validation in automated machine learning.](https://learn.microsoft.com/en-us/training/wwl-data-ai/use-automated-machine-learning/media/training-validation.png)
+
+## Evaluate performance
+
+After the job has finished you can review the best performing model. In this case, you used exit criteria to stop the job. Thus the "best" model the job generated might not be the best possible model, just the best one found within the time allowed for this exercise.
+
+The best model is identified based on the evaluation metric you specified, _Normalized root mean squared error_.
+
+A technique called _cross-validation_ is used to calculate the evaluation metric. After the model is trained using a portion of the data, the remaining portion is used to iteratively test, or cross-validate, the trained model. The metric is calculated by comparing the predicted value from the test with the actual known value, or label.
+
+The difference between the predicted and actual value, known as the _residuals_, indicates the amount of _error_ in the model. The performance metric _root mean squared error_ (RMSE), is calculated by squaring the errors across all of the test cases, finding the mean of these squares, and then taking the square root. What all of this means is that smaller this value is, the more accurate the model's predictions. The _normalized root mean squared error_ (NRMSE) standardizes the RMSE metric so it can be used for comparison between models which have variables on different scales.
+
+The **Residual Histogram** shows the frequency of residual value ranges. Residuals represent variance between predicted and true values that can't be explained by the model, in other words, errors. You should hope to see the most frequently occurring residual values clustered around zero. You want small errors with fewer errors at the extreme ends of the scale.
+
+![Screenshot of the residuals histogram that appears in the metrics tab.](https://learn.microsoft.com/en-us/training/wwl-data-ai/use-automated-machine-learning/media/residual-histogram.png)
+
+The **Predicted vs. True** chart should show a diagonal trend in which the predicted value correlates closely to the true value. The dotted line shows how a perfect model should perform. The closer the line of your model's average predicted value is to the dotted line, the better its performance. A histogram below the line chart shows the distribution of true values.
+
+![Screenshot of the Predicted vs True chart that appears in the metrics tab.](https://learn.microsoft.com/en-us/training/wwl-data-ai/use-automated-machine-learning/media/predicted-vs-true.png)
+
+After you've used automated machine learning to train some models, you can deploy the best performing model as a service for client applications to use.
+
+## Deploy a predictive service
+
+In Azure Machine Learning, you can deploy a service as an Azure Container Instances (ACI) or to an Azure Kubernetes Service (AKS) cluster. For production scenarios, an AKS deployment is recommended, for which you must create an _inference cluster_ compute target. In this exercise, you'll use an ACI service, which is a suitable deployment target for testing, and does not require you to create an inference cluster.
+
+# Summary
+
+In this module, you learned how to:
+
+- Identify the machine learning process.
+- Understand Azure Machine Learning capabilities.
+- Use automated machine learning in Azure Machine Learning studio to train and deploy a predictive model.
+
+# Create a regression model with Azure ML designer
+# Introduction
+
+You can use Microsoft Azure Machine Learning designer to create regression models by using a drag and drop visual interface, without needing to write any code.
+
+In this module, you'll learn how to:
+
+- Identify regression machine learning scenarios.
+- Use Azure Machine Learning designer to train a regression model.
+- Use a regression model for inferencing.
+- Deploy a regression model as a service.
+
+To complete this module, you'll need a Microsoft Azure subscription. If you don't already have one, you can sign up for a free trial at [https://azure.microsoft.com](https://azure.microsoft.com/?azure-portal=true).
+
+# Identify regression machine learning scenarios
+
+Regression is a form of machine learning used to understand the relationships between variables to predict a desired outcome. Regression predicts a numeric _label_ or outcome based on variables, or _features_. For example, an automobile sales company might use the characteristics of a car (such as engine size, number of seats, mileage, and so on) to predict its likely selling price. In this case, the characteristics of the car are the features, and the selling price is the label.
+
+Regression is an example of a _supervised_ machine learning technique in which you train a model using data that includes both the features and known values for the label, so that the model learns to _fit_ the feature combinations to the label. Then, after training has been completed, you can use the trained model to predict labels for new items for which the label is unknown.
+
+## Scenarios for regression machine learning models
+
+Regression machine learning models are used in many industries. A few scenarios are:
+
+- Using characteristics of houses, such as square footage and number of rooms, to predict home prices.
+- Using characteristics of farm conditions, such as weather and soil quality, to predict crop yield.
+- Using characteristics of a past campaign, such as advertising logs, to predict future advertisement clicks.
+
+# What is Azure Machine Learning?
+
+Training and deploying an effective machine learning model involves a lot of work, much of it time-consuming and resource-intensive. Azure Machine Learning is a cloud-based service that helps simplify some of the tasks it takes to prepare data, train a model, and deploy a predictive service. Regression machine learning models can be built using Azure Machine Learning.
+
+Most importantly, Azure Machine Learning helps data scientists increase their efficiency by automating many of the time-consuming tasks associated with training models. It enables them to use cloud-based compute resources that scale effectively to handle large volumes of data while incurring costs only when actually used.
+
+## Azure Machine Learning workspace
+
+To use Azure Machine Learning, you first create a _workspace_ resource in your Azure subscription. You can then use this workspace to manage data, compute resources, code, models, and other artifacts related to your machine learning workloads.
+
+After you have created an Azure Machine Learning workspace, you can develop solutions with the Azure machine learning service either with developer tools or the Azure Machine Learning studio web portal.
+
+## Azure Machine Learning studio
+
+Azure Machine Learning studio is a web portal for machine learning solutions in Azure. It includes a wide range of features and capabilities that help data scientists prepare data, train models, publish predictive services, and monitor their usage. To begin using the web portal, you need to assign the workspace you created in the Azure portal to Azure Machine Learning studio.
+
+![Screenshot of the Azure Machine Learning studio interface.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/studio-home.png)
+
+## Azure Machine Learning compute
+
+At its core, Azure Machine Learning is a service for training and managing machine learning models, for which you need compute resources on which to run the training process. Compute targets are cloud-based resources on which you can run model training and data exploration processes.
+
+In [Azure Machine Learning studio](https://ml.azure.com/?azure-portal=true), you can manage the compute targets for your data science activities. There are four kinds of compute resource you can create:
+
+- **Compute Instances**: Development workstations that data scientists can use to work with data and models.
+- **Compute Clusters**: Scalable clusters of virtual machines for on-demand processing of experiment code.
+- **Inference Clusters**: Deployment targets for predictive services that use your trained models.
+- **Attached Compute**: Links to existing Azure compute resources, such as Virtual Machines or Azure Databricks clusters.
+
+# What is Azure Machine Learning designer?
+
+In Azure Machine Learning studio, there are several ways to author regression machine learning models. One way is to use a visual interface called _designer_ that you can use to train, test, and deploy machine learning models. The drag-and-drop interface makes use of clearly defined inputs and outputs that can be shared, reused, and version controlled.
+
+Each _designer_ project, known as a pipeline, has a left panel for navigation and a canvas on your right hand side. To use _designer_, identify the building blocks, or components, needed for your model, place and connect them on your canvas, and run a machine learning job.
+
+![A screenshot of the Azure Machine Learning Studio's Designer interface.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/designer-canvas-screenshot.png)
+
+## Pipelines
+
+Pipelines let you organize, manage, and reuse complex machine learning workflows across projects and users. A pipeline starts with the dataset from which you want to train the model. Each time you run a pipeline, the configuration of the pipeline and its results are stored in your workspace as a pipeline job.
+
+![Screenshot of the pipelines page in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/pipeline-page-example.png)
+
+## Components
+
+An Azure Machine Learning component encapsulates one step in a machine learning pipeline. You can think of a component as a programming function and as a building block for Azure Machine Learning pipelines. In a pipeline project, you can access data assets and components from the left panel's **Asset Library** tab.
+
+![Screenshot of the asset library's components button in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/components-example.png)
+
+## Datasets
+
+You can create data assets on the **Data** page from local files, a datastore, web files, and Open Datasets. These data assets will appear along with standard sample datasets in _designer_'s **Asset Library**. ![Screenshot of the Data page in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/data-creation-location.png)
+
+## Azure Machine Learning Jobs
+
+An Azure Machine Learning (ML) job executes a task against a specified compute target. Jobs enable systematic tracking for your machine learning experimentation and workflows. Once a job is created, Azure ML maintains a run record for the job. All of your jobs' run records can be viewed in Azure ML studio.
+
+In your designer project, you can access the status of a pipeline job using the **Submitted jobs** tab on the left pane. ![Screenshot of the submitted jobs tab in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/submitted-jobs-location.png)
+
+You can find all the jobs you have run in a workspace on the **Jobs** page.  
+![Screenshot of the jobs page in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/jobs-page-location.png)
+
+# Understand steps for regression
+
+You can think of the steps to train and evaluate a regression machine learning model as:
+
+1. **Prepare data**: Identify the features and label in a dataset. Pre-process, or clean and transform, the data as needed.
+2. **Train model**: Split the data into two groups, a training and a validation set. Train a machine learning model using the training data set. Test the machine learning model for performance using the validation data set.
+3. **Evaluate performance**: Compare how close the model's predictions are to the known labels.
+4. **Deploy a predictive service**: After you train a machine learning model, you need to convert the training pipeline into a real-time inference pipeline. Then you can deploy the model as an application on a server or device so that others can use it.
+
+Let's follow these four steps as they appear in Azure designer.
+
+## Prepare data
+
+Azure machine learning designer has several pre-built components that can be used to prepare data for training. These components enable you to clean data, normalize features, join tables, and more. ![Screenshot of designer components that can be used to prepare data.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/prepare-data-example.png)
+
+## Train model
+
+To train a regression model, you need a dataset that includes historical _features_, characteristics of the entity for which you want to make a prediction, and known _label_ values. The label is the quantity you want to train a model to predict.
+
+It's common practice to train the model using a subset of the data, while holding back some data with which to test the trained model. This enables you to compare the labels that the model predicts with the actual known labels in the original dataset.
+
+You will use _designer_'s **Score Model** component to generate the predicted class label value. Once you connect all the components, you will want to run an experiment, which will use the data asset on the canvas to train and score a model.
+
+![Screenshot of designer components that can be connected to train a regression model.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/train-model-example.png)
+
+## Evaluate performance
+
+After training a model, it is important to evaluate its performance. There are many performance metrics and methodologies for evaluating how well a model makes predictions. You can review evaluation metrics on the completed job page by right-clicking on the **Evaluate model** component.
+
+![Screenshot of a right click on the evaluate model in completed jobs to see evaluation results.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/evaluate-model-example.png)
+
+- **Mean Absolute Error (MAE)**: The average difference between predicted values and true values. This value is based on the same units as the label, in this case dollars. The lower this value is, the better the model is predicting.
+- **Root Mean Squared Error (RMSE)**: The square root of the mean squared difference between predicted and true values. The result is a metric based on the same unit as the label (dollars). When compared to the MAE (above), a larger difference indicates greater variance in the individual errors (for example, with some errors being very small, while others are large).
+- **Relative Squared Error (RSE)**: A relative metric between 0 and 1 based on the square of the differences between predicted and true values. The closer to 0 this metric is, the better the model is performing. Because this metric is relative, it can be used to compare models where the labels are in different units.
+- **Relative Absolute Error (RAE)**: A relative metric between 0 and 1 based on the absolute differences between predicted and true values. The closer to 0 this metric is, the better the model is performing. Like RSE, this metric can be used to compare models where the labels are in different units.
+- **Coefficient of Determination (R2)**: This metric is more commonly referred to as _R-Squared_, and summarizes how much of the variance between predicted and true values is explained by the model. The closer to 1 this value is, the better the model is performing.
+
+## Deploy a predictive service
+
+You have the ability to deploy a service that can be used in real-time. In order to automate your model into a service that makes continuous predictions, you need to create and deploy an inference pipeline.
+
+#### Inference pipeline
+
+To deploy your pipeline, you must first convert the training pipeline into a real-time inference pipeline. This process removes training components and adds web service inputs and outputs to handle requests.
+
+The inference pipeline performs the same data transformations as the first pipeline for _new_ data. Then it uses the trained model to _infer_, or predict, label values based on its features. This model will form the basis for a predictive service that you can publish for applications to use.
+
+You can create an inference pipeline by selecting the menu above a completed job. ![Screenshot of the inference pipeline options in the jobs pane.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/inference-pipeline-example.png)
+
+#### Deployment
+
+After creating the inference pipeline, you can deploy it as an endpoint. In the endpoints page, you can view deployment details, test your pipeline service with sample data, and find credentials to connect your pipeline service to a client application.
+
+It will take a while for your endpoint to be deployed. The Deployment state on the **Details** tab will indicate _Healthy_ when deployment is successful.
+
+![Screenshot of the endpoints page for a successfully deployed model.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/endpoints-example-1.png)
+
+On the **Test** tab, you can test your deployed service with sample data in a JSON format. The test tab is a tool you can use to quickly check to see if your model is behaving as expected. Typically it is helpful to test the service before connecting it to an application.
+
+![Screenshot of the test tab on the endpoints page.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/endpoints-example-3.png)
+
+You can find credentials for your service on the **Consume** tab. These credentials are used to connect your trained machine learning model as a service to a client application.
+
+![Screenshot of where to find the key and endpoint on the consume tab.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-regression-model-azure-machine-learning-designer/media/endpoints-example-2.png)
+
+# Summary
+
+In this module, you learned how to:
+
+- Identify regression machine learning scenarios.
+- Use Azure Machine Learning designer to train a regression model.
+- Use a regression model for inferencing.
+- Deploy a regression model as a service.
+
+# Create a classification model with Azure ML designer
+# Introduction
+
+Classification is an example of a _supervised_ machine learning technique in which you train a model using data that includes both the features and known values for the label, so that the model learns to _fit_ the feature combinations to the label. Then, after training has been completed, you can use the trained model to predict labels for new items for which the label is unknown.
+
+You can use Microsoft Azure Machine Learning designer to create classification models by using a drag and drop visual interface, without needing to write any code.
+
+In this module, you'll learn how to:
+
+- Identify classification machine learning scenarios.
+- Use Azure Machine Learning designer to train a classification model.
+- Use a classification model for inferencing.
+- Deploy and test a classification model.
+
+To complete this module, you'll need a Microsoft Azure subscription. If you don't already have one, you can sign up for a free trial at [https://azure.microsoft.com](https://azure.microsoft.com/?azure-portal=true).
+
+# Identify classification machine learning scenarios
+
+_Classification_ is a form of machine learning that is used to predict which category, or _class_, an item belongs to. This machine learning technique can be applied to binary and multi-class scenarios. For example, a health clinic might use the characteristics of a patient (such as age, weight, blood pressure, and so on) to predict whether the patient is at risk of diabetes. In this case, the characteristics of the patient are the _features_, and the _label_ is a binary classification of either **0** or **1**, representing non-diabetic or diabetic.
+
+![Diagram of patients with clinical data, classified as diabetic and non-diabetic.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/diabetes.png)
+
+Like regression, classification is an example of a _supervised_ machine learning technique in which you train a model using data that includes both the features and known values for the label, so that the model learns to _fit_ the feature combinations to the label. Then, after training has been completed, you can use the trained model to predict labels for new items for which the label is unknown.
+
+## Scenarios for classification machine learning models
+
+Classification machine learning models are used in many industries. A few scenarios are:
+
+- Using clinical data to predict whether a patient will become sick or not.
+- Using historical data to predict whether text sentiment is positive, negative, or neutral.
+- Using characteristics of small businesses to predict if a new venture will succeed.
+
+# What is Azure Machine Learning?
+
+Training and deploying an effective machine learning model involves a lot of work, much of it time-consuming and resource-intensive. Azure Machine Learning is a cloud-based service that helps simplify some of the tasks it takes to prepare data, train a model, and deploy a predictive service. Classification machine learning models can be built using Azure Machine Learning.
+
+Most importantly, Azure Machine Learning helps data scientists increase their efficiency by automating many of the time-consuming tasks associated with training models. It enables them to use cloud-based compute resources that scale effectively to handle large volumes of data while incurring costs only when actually used.
+
+## Azure Machine Learning workspace
+
+To use Azure Machine Learning, you first create a _workspace_ resource in your Azure subscription. You can then use this workspace to manage data, compute resources, code, models, and other artifacts related to your machine learning workloads.
+
+After you have created an Azure Machine Learning workspace, you can develop solutions with the Azure Machine Learning Service either with developer tools or the Azure Machine Learning studio web portal.
+
+## Azure Machine Learning studio
+
+Azure Machine Learning studio is a web portal for machine learning solutions in Azure. It includes a wide range of features and capabilities that help data scientists prepare data, train models, publish predictive services, and monitor their usage. To begin using the web portal, you need to assign the workspace you created in the Azure portal to Azure Machine Learning studio.
+
+![Screenshot of the Azure Machine Learning studio interface.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/studio-home.png)
+
+## Azure Machine Learning compute
+
+At its core, Azure Machine Learning is a service for training and managing machine learning models, for which you need compute resources on which to run the training process. Compute targets are cloud-based resources on which you can run model training and data exploration processes.
+
+In [Azure Machine Learning studio](https://ml.azure.com/?azure-portal=true), you can manage the compute targets for your data science activities. There are four kinds of compute resource you can create:
+
+- **Compute Instances**: Development workstations that data scientists can use to work with data and models.
+- **Compute Clusters**: Scalable clusters of virtual machines for on-demand processing of experiment code.
+- **Inference Clusters**: Deployment targets for predictive services that use your trained models.
+- **Attached Compute**: Links to existing Azure compute resources, such as Virtual Machines or Azure Databricks clusters.
+
+# What is Azure Machine Learning designer?
+
+In Azure Machine Learning studio, there are several ways to author classification machine learning models. One way is to use a visual interface called _designer_ that you can use to train, test, and deploy machine learning models. The drag-and-drop interface makes use of clearly defined inputs and outputs that can be shared, reused, and version controlled.
+
+Each _designer_ project, known as a pipeline, has a left panel for navigation and a canvas on your right hand side. To use _designer_, identify the building blocks, or components, needed for your model, place and connect them on your canvas, and run a machine learning job.
+
+![A screenshot of the Azure Machine Learning Studio's Designer interface.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/designer-canvas-screenshot.png)
+
+## Pipelines
+
+Pipelines let you organize, manage, and reuse complex machine learning workflows across projects and users. A pipeline starts with the dataset from which you want to train the model. Each time you run a pipeline, the configuration of the pipeline and its results are stored in your workspace as a pipeline job.
+
+![Screenshot of the pipelines page in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/pipeline-page-example.png)
+
+## Components
+
+An Azure Machine Learning component encapsulates one step in a machine learning pipeline. You can think of a component as a programming function and as a building block for Azure Machine Learning pipelines. In a pipeline project, you can access data assets and components from the left panel's **Asset Library** tab.
+
+![Screenshot of the asset library's components button in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/components-example.png)
+
+## Datasets
+
+You can create data assets on the **Data** page from local files, a datastore, web files, and Open Datasets. These data assets will appear along with standard sample datasets in _designer_'s **Asset Library**. ![Screenshot of the Data page in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/data-creation-location.png)
+
+## Azure Machine Learning Jobs
+
+An Azure Machine Learning job executes a task against a specified compute target. Jobs enable systematic tracking for your machine learning experimentation and workflows. Once a job is created, Azure Machine Learning maintains a run record for the job. All of your jobs' run records can be viewed in Azure Machine Learning studio.
+
+In your designer project, you can access the status of a pipeline job using the **Submitted jobs** tab on the left pane. ![Screenshot of the submitted jobs tab in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/submitted-jobs-location.png)
+
+You can find all the jobs you have run in a workspace on the **Jobs** page.  
+![Screenshot of the jobs page in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/jobs-page-location.png)
+
+# Understand steps for classification
+
+- 8 minutes
+
+You can think of the steps to train and evaluate a classification machine learning model as:
+
+1. **Prepare data**: Identify the features and label in a dataset. Pre-process, or clean and transform, the data as needed.
+2. **Train model**: Split the data into two groups, a training and a validation set. Train a machine learning model using the training data set. Test the machine learning model for performance using the validation data set.
+3. **Evaluate performance**: Compare how close the model's predictions are to the known labels.
+4. **Deploy a predictive service**: After you train a machine learning model, you need to convert the training pipeline into a real-time inference pipeline. Then you can deploy the model as an application on a server or device so that others can use it.
+
+Let's follow these four steps as they appear in Azure Designer.
+
+## Prepare data
+
+Azure Machine Learning designer has several pre-built components that can be used to prepare data for training. These components enable you to clean data, normalize features, join tables, and more. ![Screenshot of designer components that can be used to prepare data.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/prepare-data-example.png)
+
+## Train model
+
+To train a classification model, you need a dataset that includes historical _features_, characteristics of the entity for which you want to make a prediction, and known _label_ values. The label is the class indicator you want to train a model to predict.
+
+It's common practice to train the model using a subset of the data, while holding back some data with which to test the trained model. This enables you to compare the labels that the model predicts with the actual known labels in the original dataset.
+
+You'll use _designer_'s **Score Model** component to generate the predicted class label value. Once you connect all the components, you'll want to run an experiment, which will use the data asset on the canvas to train and score a model.
+
+![Screenshot of designer components that can be connected to train a classification model.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/classification-train-model-example.png)
+
+## Evaluate performance
+
+After training a model, it's important to evaluate its performance. There are many performance metrics and methodologies for evaluating how well a model makes predictions. You can review evaluation metrics on the completed job page by right-clicking on the **Evaluate model** component.
+
+![Screenshot of a right click on the evaluate model in completed jobs to see evaluation results.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/evaluate-model-example.png)
+
+#### Confusion matrix
+
+The confusion matrix is a tool used to assess the quality of a classification model's predictions. It compares predicted labels against actual labels.
+
+In a binary classification model where you're predicting one of two possible values, the confusion matrix is a 2x2 grid showing the predicted and actual value counts for classes **1** and **0**. It categorizes the model's results into four types of outcomes. Using our diabetes example these outcomes can look like:
+
+- _True Positive_: The model predicts the patient has diabetes, and the patient does actually have diabetes.
+- _False Positive_: The model predicts the patient has diabetes, but the patient doesn't actually have diabetes.
+- _False Negative_: The model predicts the patient doesn't have diabetes, but the patient actually does have diabetes.
+- _True Negative_: The model predicts the patient doesn't have diabetes, and the patient actually doesn't have diabetes.
+
+![Screenshot of a confusion matrix terms showing true and false positives, as well as true and false negatives.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/confusion-matrix-terms.png)
+
+Suppose you have data for 100 patients. You create a model that predicts a patient does have diabetes 15% of the time, so it _predicts_ 15 people have diabetes and _predicts_ 85 people do not have diabetes. In actuality, suppose 25 people _actually_ do have diabetes and 75 people _actually_ do not have diabetes. This information can be presented in a confusion matrix such as the one below:
+
+![Screenshot of a confusion matrix showing actual and predicted value counts.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/confusion-matrix.png)
+
+For a multi-class classification model (where there are more than two possible classes), the same approach is used to tabulate each possible combination of actual and predicted value counts - so a model with three possible classes would result in a 3x3 matrix with a diagonal line of cells where the predicted and actual labels match.
+
+Metrics that can be derived from the confusion matrix include:
+
+- **Accuracy**: The number of correct predictions (true positives + true negatives) divided by the total number of predictions.
+- **Precision**: The number of the cases classified as positive that are actually positive: the number of true positives divided by (the number of true positives plus false positives).
+- **Recall**: The fraction of positive cases correctly identified: the number of true positives divided by (the number of true positives plus false negatives).
+- **F1 Score**: An overall metric that essentially combines precision and recall.
+
+Of these metrics, _accuracy_ may be the most intuitive. However, you need to be careful about using accuracy as a measurement of how well a model performs. Using the model that predicts 15% of patients have diabetes, when actually 25% of patients have diabetes, we can calculate the following metrics:
+
+The _accuracy_ of the model is: (10+70)/ 100 = 80%.
+
+The _precision_ of the model is: 10/(10+5) = 67%.
+
+The _recall_ of the model is 10/(10+15) = 40%
+
+#### Choosing a threshold
+
+A classification model predicts the probability for each possible class. In other words, the model calculates a likelihood for each predicted label. In the case of a binary classification model, the predicted probability is a value between 0 and 1. By default, a predicted probability _including or above_ 0.5 results in a class prediction of 1, while a prediction _below_ this threshold means that there's a greater probability of a _negative_ prediction (remember that the probabilities for all classes add up to 1), so the predicted class would be 0.
+
+Designer has a useful _threshold slider_ for reviewing how the model performance would change depending on the set threshold. ![Screenshot of the threshold slider in the results from the Evaluate module.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/threshold-example.png)
+
+#### ROC curve and AUC metric
+
+Another term for _recall_ is **True positive rate**, and it has a corresponding metric named **False positive rate**, which measures the number of negative cases incorrectly identified as positive compared between the number of actual negative cases. Plotting these metrics against each other for every possible threshold value between 0 and 1 results in a curve, known as the **ROC curve** (ROC stands for _receiver operating characteristic_, but most data scientists just call it a ROC curve). In an ideal model, the curve would go all the way up the left side and across the top, so that it covers the full area of the chart. The larger the _area under the curve_, of **AUC** metric, (which can be any value from 0 to 1), the better the model is performing. You can review the ROC curve in **Evaluation Results**.
+
+![Screenshot of the ROC curve found by previewing results from the Evaluate module.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/roc-curve-example.png)
+
+## Deploy a predictive service
+
+You have the ability to deploy a service that can be used in real-time. In order to automate your model into a service that makes continuous predictions, you need to create and deploy an inference pipeline.
+
+#### Inference pipeline
+
+To deploy your pipeline, you must first convert the training pipeline into a real-time inference pipeline. This process removes training components and adds web service inputs and outputs to handle requests.
+
+The inference pipeline performs the same data transformations as the first pipeline for _new_ data. Then it uses the trained model to _infer_, or predict, label values based on its features. This model will form the basis for a predictive service that you can publish for applications to use.
+
+You can create an inference pipeline by selecting the menu above a completed job. ![Screenshot of the inference pipeline options in the jobs pane.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/inference-pipeline-example.png)
+
+#### Deployment
+
+After creating the inference pipeline, you can deploy it as an endpoint. In the endpoints page, you can view deployment details, test your pipeline service with sample data, and find credentials to connect your pipeline service to a client application.
+
+It will take a while for your endpoint to be deployed. The Deployment state on the **Details** tab will indicate _Healthy_ when deployment is successful.
+
+![Screenshot of the endpoints page for a successfully deployed model.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/endpoints-example-1.png)
+
+On the **Test** tab, you can test your deployed service with sample data in a JSON format. The test tab is a tool you can use to quickly check to see if your model is behaving as expected. Typically it is helpful to test the service before connecting it to an application.
+
+![Screenshot of the test tab on the endpoints page.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/diabetes-endpoints-example-3.png)
+
+You can find credentials for your service on the **Consume** tab. These credentials are used to connect your trained machine learning model as a service to a client application.
+
+![Screenshot of where to find the key and endpoint on the consume tab.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-classification-model-azure-machine-learning-designer/media/endpoints-example-2.png)
+
+# Summary
+
+In this module, you learned how to:
+
+- Identify classification machine learning scenarios.
+- Use Azure Machine Learning designer to train a classification model.
+- Use a classification model for inferencing.
+- Deploy and test a classification model.
+
+# Create a clustering model with Azure ML designer
+# Introduction
+
+You can use Microsoft Azure Machine Learning designer to create clustering models by using a drag and drop visual interface, without needing to write any code.
+
+In this module, you'll learn how to:
+
+- Identify common clustering machine learning scenarios.
+- Use Azure Machine Learning designer to train a clustering model.
+- Use a clustering model for inferencing.
+- Deploy a clustering model as a service.
+
+To complete this module, you'll need a Microsoft Azure subscription. If you don't already have one, you can sign up for a free trial at [https://azure.microsoft.com](https://azure.microsoft.com/?azure-portal=true).
+
+# Identify clustering machine learning scenarios
+
+- 2 minutes
+
+_Clustering_ is a form of machine learning that is used to group similar items into clusters based on their features. For example, a researcher might take measurements of penguins, and group them based on similarities in their proportions.
+
+![Graphic of penguins clustered into groups.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/penguins.png)
+
+Clustering is an example of _unsupervised_ machine learning, in which you train a model to separate items into clusters based purely on their characteristics, or _features_. There is no previously known cluster value (or _label_) from which to train the model.
+
+## Scenarios for clustering machine learning models
+
+Clustering machine learning models are used in many industries. A few scenarios are:
+
+- Cluster customer attribute data into segments for marketing analysis.
+- Cluster geographic coordinates into regions of high traffic in a city for a ride-share application.
+- Cluster written feedback into topics to prioritize customer service changes.
+
+# What is Azure Machine Learning?
+
+Training and deploying an effective machine learning model involves a lot of work, much of it time-consuming and resource-intensive. Azure Machine Learning is a cloud-based service that helps simplify some of the tasks it takes to prepare data, train a model, and deploy a predictive service. Clustering machine learning models can be built using Azure Machine Learning.
+
+Most importantly, Azure Machine Learning helps data scientists increase their efficiency by automating many of the time-consuming tasks associated with training models. It enables them to use cloud-based compute resources that scale effectively to handle large volumes of data while incurring costs only when actually used.
+
+## Azure Machine Learning workspace
+
+To use Azure Machine Learning, you first create a _workspace_ resource in your Azure subscription. You can then use this workspace to manage data, compute resources, code, models, and other artifacts related to your machine learning workloads.
+
+After you have created an Azure Machine Learning workspace, you can develop solutions with the Azure machine learning service either with developer tools or the Azure Machine Learning studio web portal.
+
+## Azure Machine Learning studio
+
+Azure Machine Learning studio is a web portal for machine learning solutions in Azure. It includes a wide range of features and capabilities that help data scientists prepare data, train models, publish predictive services, and monitor their usage. To begin using the web portal, you need to assign the workspace you created in the Azure portal to Azure Machine Learning studio
+
+![Screenshot of the Azure Machine Learning studio interface.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/studio-home.png)
+
+## Azure Machine Learning compute
+
+At its core, Azure Machine Learning is a service for training and managing machine learning models, for which you need compute resources on which to run the training process. Compute targets are cloud-based resources on which you can run model training and data exploration processes.
+
+In [Azure Machine Learning studio](https://ml.azure.com/?azure-portal=true), you can manage the compute targets for your data science activities. There are four kinds of compute resource you can create:
+
+- **Compute Instances**: Development workstations that data scientists can use to work with data and models.
+- **Compute Clusters**: Scalable clusters of virtual machines for on-demand processing of experiment code.
+- **Inference Clusters**: Deployment targets for predictive services that use your trained models.
+- **Attached Compute**: Links to existing Azure compute resources, such as Virtual Machines or Azure Databricks clusters.
+
+# What is Azure Machine Learning designer?
+
+In Azure Machine Learning studio, there are several ways to author clustering machine learning models. One way is to use a visual interface called _designer_ that you can use to train, test, and deploy machine learning models. The drag-and-drop interface makes use of clearly defined inputs and outputs that can be shared, reused, and version controlled.
+
+Each _designer_ project, known as a pipeline, has a left panel for navigation and a canvas on your right hand side. To use _designer_, identify the building blocks, or components, needed for your model, place and connect them on your canvas, and run a machine learning job.
+
+![A screenshot of the Azure Machine Learning Studio's Designer interface.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/designer-canvas-screenshot.png)
+
+## Pipelines
+
+Pipelines let you organize, manage, and reuse complex machine learning workflows across projects and users. A pipeline starts with the dataset from which you want to train the model. Each time you run a pipeline, the configuration of the pipeline and its results are stored in your workspace as a pipeline job.
+
+![Screenshot of the pipelines page in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/pipeline-page-example.png)
+
+## Components
+
+An Azure Machine Learning component encapsulates one step in a machine learning pipeline. You can think of a component as a programming function and as a building block for Azure Machine Learning pipelines. In a pipeline project, you can access data assets and components from the left panel's **Asset Library** tab.
+
+![Screenshot of the asset library's components button in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/components-example.png)
+
+## Datasets
+
+You can create data assets on the **Data** page from local files, a datastore, web files, and Open Datasets. These data assets will appear along with standard sample datasets in _designer_'s **Asset Library**. ![Screenshot of the Data page in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/data-creation-location.png)
+
+## Azure Machine Learning jobs
+
+An Azure Machine Learning (ML) job executes a task against a specified compute target. Jobs enable systematic tracking for your machine learning experimentation and workflows. Once a job is created, Azure ML maintains a run record for the job. All of your jobs' run records can be viewed in Azure ML studio.
+
+In your designer project, you can access the status of a pipeline job using the **Submitted jobs** tab on the left pane. ![Screenshot of the submitted jobs tab in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/submitted-jobs-location.png)
+
+You can find all the jobs you have run in a workspace on the **Jobs** page.  
+![Screenshot of the jobs page in Azure Machine Learning designer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/jobs-page-location.png)
 
 
-## ML services in Azure
+# Understand steps for clustering
 
-![[Pasted image 20230712142152.png]]
+You can think of the steps to train and evaluate a clustering machine learning model as:
 
-- Cognitive services
-	- More flexibility to use
-	- Easier to use
-	- Prebuilt models (Cognitive services)
-	- Coding-level tools (Databricks 4 ex)
+1. **Prepare data**: Identify the features in a dataset. Pre-process, or clean and transform, the data as needed.
+2. **Train model**: Split the data into two groups, a training and a validation set. Train a machine learning model using the training data set. Test the machine learning model for performance using the validation data set.
+3. **Evaluate performance**: These metrics can help data scientists assess how well the model separates the clusters.
+4. **Deploy a predictive service**: After you train a machine learning model, you need to convert the training pipeline into a real-time inference pipeline. Then you can deploy the model as an application on a server or device so that others can use it.
 
-### Azure ML
-- Microsoft cloud-based, no-code platform
-- Azure ML studio (graphical tool, supports SQL, R, and python)
-- https://ml.azure.com
-- Main unit of work  is a pipeline
-- Modules perform actions on a dataset
-- Deployment through Azure Container instances (ACI) or Azure KUbernetes service (AKS)
+Let's follow these four steps as they appear in Azure Designer.
 
-## Creating an Azure ML resource
-- Workspace
-	- top-level
-- Azure ML resource
-- Basic (code) and enterprise (user) levels merged
-- Requirements
-	- Azure storage account
-	- Azure key vault
-	- Application insights
-	- Container registry
+## Prepare data
 
+To train a clustering model, you need a dataset that includes multiple observations of the items you want to cluster, including numeric features that can be used to determine similarities between individual cases that will help separate them into clusters.
 
-*************************************************************
-# Creating an experiment in Azure ML
+Azure Machine Learning designer has several pre-built components that can be used to prepare data for training. These components enable you to clean data, normalize features, join tables, and more. ![Screenshot of designer components that can be used to prepare data.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/prepare-data-example.png)
 
+## Train model
 
-## ML def
-- Features
-	- Data values that influence the projection of a model (i.e temperature)
-- Label (i.e rentals)
-- Overfitting
-	- If model tries too hard to guess exactly every single label instance it will not generalize well when inputting new data
-- Outliers
-		- Points that differ considerably from other observations
+To train a clustering model, you need to apply a clustering algorithm to the data, using only the features that you have selected for clustering. You'll train the model with a subset of the data, and use the rest to test the trained model.
 
-Steps
-- Ingest data
-- Treat data
-- Split data
-- Train model
-- Score model
-- Evaluate model
+The **K-Means Clustering** algorithm groups items into the number of clusters, or centroids, you specify - a value referred to as _**K**_.
 
-## The ML process: Data steps
-### Obtaining the data
-- Datastores
-	- Azure connection info
-	- Azure SQL database
-	- Azure Blob storage
-- Dataset
-	- Data structures/metadata
-	- Table, query/ stored procedure
-	- Files on a storage cntainer
+The K-Means algorithm works by:
 
-### Treating the data
-- Join data from multiple sources (common column)
-- Feature engineering: extract additional features from raw data
-- Feature selection "Select Columns on dataset"
-- Additional options: Clean missing data, normalize data, ect
+1. Initializing _K_ coordinates as randomly selected points called _centroids_ in _n_-dimensional space (where _n_ is the number of dimensions in the feature vectors).
+2. Plotting the feature vectors as points in the same space, and assigning each point to its closest centroid.
+3. Moving the centroids to the middle of the points allocated to it (based on the _mean_ distance).
+4. Reassigning the points to their closest centroid after the move.
+5. Repeating steps 3 and 4 until the cluster allocations stabilize or the specified number of iterations has completed.
 
-### Splitting the data
-- Training set
-- Validation set
-- Split considerations
-	- Training and validation set will have the same columns and features (split rows not columns)
-	- Training set> validation set
-	- 60/40 or 30/70
-	- Training and validation sets are distinct
+You will use _designer_'s **Assign Data to Clusters** component to group the data into clusters. Once you connect all the components, you will want to run an experiment, which will use the data asset on the canvas to train a model.
 
+![Screenshot of designer components that can be connected to train a classification model.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/train-model-example.png)
 
-## The ML process: Model steps
-### What is model training?
-- Feeds the training set to an ML algorithm to create the model
-- three choices
-	- Label 
-	- Algorithm
-	- Compute
+## Evaluate performance
 
-### Choosing a label
-- Labeling is the process of tagging training data with known values
-- On classification and regression models you need to choose column containing label
-- Supervised
-	- Models learn from labeled dataset (Classification, regression)
-- Unsupervised
-	- Model works on datasets without a label, and groups data by features (Clustering)
+After training a model, it is important to evaluate its performance. There are many performance metrics and methodologies for evaluating how well a model makes predictions. You can review evaluation metrics on the completed job page by right-clicking on the **Evaluate model** component.
 
-### Choosing the ML algorithm
-- Algorithms are the ML training code
-- Several options
-- Learn more
-	- https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-cheat-sheet
-	- 
+![Screenshot of a right click on the evaluate model in completed jobs to see evaluation results.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/evaluate-model-example.png)
 
-### The Azure ML compute
-- Influences both cost and performance when building models
-- Deploys a VM preconfigured for ML on hardware and software
-- Model scoring
-	- Generates a set of metrics about the model performance
-- Model evaluation
-	- Displays the statistics generated for model performance analysis
+When the experiment run has finished, select **Job details**. Right click on the **Evaluate Model** module and select **Preview data**, then select **Evaluation results**. These metrics can help data scientists assess how well the model separates the clusters. They include a row of metrics for each cluster, and a summary row for a combined evaluation. The metrics in each row are:
 
-## Creating an Azure ML model
-demof
+- **Average Distance to Other Center**: This indicates how close, on average, each point in the cluster is to the centroids of all other clusters.
+- **Average Distance to Cluster Center**: This indicates how close, on average, each point in the cluster is to the centroid of the cluster.
+- **Number of Points**: The number of points assigned to the cluster.
+- **Maximal Distance to Cluster Center**: The maximum of the distances between each point and the centroid of that point’s cluster. If this number is high, the cluster may be widely dispersed. This statistic in combination with the **Average Distance to Cluster Center** helps you determine the cluster’s _spread_.
 
-## Model evaluation metrics
-- Clustering
-	- Average distance to other center
-	- Avg distance to cluster center
-	- Nr of points
-	- Max distance to cluster center
-	- Avg distance to cluster center
-	- Combined evaluation
-- Regression
-	- MAE
-	- RMSE
-	- RAE
-	- RSE
-	- Coefficient of determination
-- Classification
-	- Accuracy, precision, recall, F1 score, AUC
-- https://docs.microsoft.com/en-us/azure/machine-learning/component-reference/evaluate-model
-- The confusion matrix (actual vs prediction)
+## Deploy a predictive service
 
-1. Microsoft responsible AI
-		1. Aims to address ethical problems related to AI and ML
-2. Model explainability
-	1. Adds transparency by highlighting features with high influence on the model (preview)
+You have the ability to deploy a service that can be used in real-time. In order to automate your model into a service that makes continuous predictions, you need to create and deploy an inference pipeline.
 
-## Performing model evaluation
+#### Inference pipeline
+
+To deploy your pipeline, you must first convert the training pipeline into a real-time inference pipeline. This process removes training components and adds web service inputs and outputs to handle requests.
+
+The inference pipeline performs the same data transformations as the first pipeline for _new_ data. Then it uses the trained model to _infer_, or predict, clusters based on its features. This model will form the basis for a predictive service that you can publish for applications to use.
+
+You can create an inference pipeline by selecting the menu above a completed job. ![Screenshot of the inference pipeline options in the jobs pane.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/inference-pipeline-example.png)
+
+#### Deployment
+
+After creating the inference pipeline, you can deploy it as an endpoint. In the endpoints page, you can view deployment details, test your pipeline service with sample data, and find credentials to connect your pipeline service to a client application.
+
+It will take a while for your endpoint to be deployed. The Deployment state on the **Details** tab will indicate _Healthy_ when deployment is successful.
+
+![Screenshot of the endpoints page for a successfully deployed model.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/endpoints-example-1.png)
+
+On the **Test** tab, you can test your deployed service with sample data in a JSON format. The test tab is a tool you can use to quickly check to see if your model is behaving as expected. Typically it is helpful to test the service before connecting it to an application.
+
+![Screenshot of the test tab on the endpoints page.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/endpoints-example-3.png)
+
+You can find credentials for your service on the **Consume** tab. These credentials are used to connect your trained machine learning model as a service to a client application.
+
+![Screenshot of where to find the key and endpoint on the consume tab.](https://learn.microsoft.com/en-us/training/wwl-data-ai/create-clustering-model-azure-machine-learning-designer/media/endpoints-example-2.png)
+
+# Summary
+
+In this module, you learned how to:
+
+- Identify common clustering machine learning scenarios.
+- Use Azure Machine Learning designer to train a clustering model.
+- Use a clustering model for inferencing.
+- Deploy a clustering model as a service.# Summary
+
+- 1 minute
+
+In this module, you learned how to:
+
+- Identify common clustering machine learning scenarios.
+- Use Azure Machine Learning designer to train a clustering model.
+- Use a clustering model for inferencing.
+- Deploy a clustering model as a service.
 
 
-*************************************************************
-# Azure AutoML
-
-## Overview of the Azure AutoML
-- Data science questions automated by AutoML
-	- Which algorithm
-	- Data scaling and normalization
-	- Hyperparameters
-- Model deployment
-	- Deployment makes your model available externally
-	- 2 Deployment options
-		- For testing Azure Container instance (ACI)
-		- For production Azure Kubernetes Service (AKS)
 
 
-## Using Azure AutoML
-Demo
-https://www.microsoft.com/en-us/ai/ai-lab-projects
-https://docs.microsoft.com/en-us/azure/machine-learning
-https://docs.microsoft.com/en-us/learn/paths/create-no-code-predictive-models-azure-machine-learning
-*************************************************************
+
+
+
+
+
+
+
+
