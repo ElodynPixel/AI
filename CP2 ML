@@ -1,4 +1,4 @@
-# Use Automated ML in Azure ML
+# Use Automated ML in Azure Machine Learning
 # Introduction
 
 _Machine Learning_ is the foundation for most artificial intelligence solutions. Creating an intelligent solution often begins with the use of machine learning to train predictive models using historic data that you have collected.
